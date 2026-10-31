@@ -1404,7 +1404,7 @@ android {
     defaultConfig {
         // Instagram 453's arm64 builds declare minSdk 28 and the patch raises the others' 26 to
         // it, so nothing below it can run this code.
-        minSdk = 28
+        minSdk = 26
     }
 
     compileOptions {
