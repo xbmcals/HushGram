@@ -11,13 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write   # needed to publish the release
+      contents: read
       packages: read
 
     env:
       GITHUB_ACTOR: ${{ github.actor }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - uses: actions/checkout@v4
@@ -29,10 +28,15 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v4
 
-      # Rewrites API 28/29 calls in this checkout only; nothing is committed,
+      # Rewrites API 28/29 calls in this checkout only; nothing is pushed,
       # so main stays identical to upstream and syncs cleanly.
       - name: Apply API 26 compat transforms
         run: python3 scripts/api26/apply.py
+
+      # Upstream's scripts/build-inputs.gradle refuses to build until new/changed
+      # repository inputs are staged. Staging is local to this runner only.
+      - name: Stage changes for upstream's input check
+        run: git add -A
 
       - name: Make gradlew executable
         run: chmod +x ./gradlew
@@ -42,6 +46,10 @@ jobs:
       - name: Build all .mpp bundles
         run: ./gradlew buildAndroid --console=plain
 
+      - name: Show the guard script (only if the build failed)
+        if: failure()
+        run: sed -n 1,60p scripts/build-inputs.gradle
+
       - name: Show everything that was built
         if: always()
         run: find . -name '*.mpp' -not -path './.git/*' -exec ls -lh {} \;
@@ -49,29 +57,24 @@ jobs:
       # Pick the single bundle to ship: the largest .mpp under patches/.
       # The extensions/ .mpp is a build input, not the thing you install.
       - name: Select the one bundle
-        id: pick
         run: |
           mkdir -p dist
           f=$(find patches -name '*.mpp' -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)
           if [ -z "$f" ]; then echo "No .mpp found under patches/"; exit 1; fi
           echo "Selected: $f"
           cp "$f" dist/
-          echo "name=$(basename "$f")" >> "$GITHUB_OUTPUT"
-          echo "--- contents ---"
           unzip -l "dist/$(basename "$f")" | head -40
 
       # Backstop: fails if any 28+/29+ call is still unguarded.
       - name: Lint (NewApi must be clean)
         run: ./gradlew lintDebug --console=plain
 
-      # Raw .mpp download (no zip wrapper): Releases page -> Assets.
-      - name: Publish release with the single .mpp
-        run: |
-          gh release create "api26-${{ github.run_number }}" "dist/${{ steps.pick.outputs.name }}" \
-            --repo "${{ github.repository }}" \
-            --title "API 26 build #${{ github.run_number }}" \
-            --notes "HushGram patch bundle with Android 8.x (API 26) compat transforms. Commit ${{ github.sha }}." \
-            --prerelease
+      # dist/ holds exactly one file, so the zip has the .mpp at its root.
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hushgram-api26
+          path: dist/*.mpp
+          if-no-files-found: error
 
       - uses: actions/upload-artifact@v4
         if: always()
