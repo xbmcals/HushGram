@@ -1,0 +1,43 @@
+name: Build (Android 8.x / API 26 compat)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore: ['**.md']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      # Rewrites API 28/29 calls in the checkout only; nothing is committed,
+      # so `main` stays identical to upstream and syncs cleanly.
+      - name: Apply API 26 compat transforms
+        run: python3 scripts/api26/apply.py
+
+      # Backstop: fails if any 28+/29+ call is still unguarded.
+      - name: Lint (NewApi must be clean)
+        run: ./gradlew lintDebug
+
+      # Replace with whatever upstream's own build/release workflow runs
+      # (see .github/workflows/ from SysAdminDoc/HushGram).
+      - name: Build patch bundle
+        run: ./gradlew build
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: hushgram-api26
+          path: |
+            **/*.mpp
+            **/build/reports/lint-results-debug.*
+          if-no-files-found: warn
