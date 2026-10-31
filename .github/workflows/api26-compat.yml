@@ -45,7 +45,7 @@ jobs:
 
       # Replace with whatever upstream's own build/release workflow runs.
       - name: Build patch bundle
-        run: ./gradlew build --console=plain
+        run: ./gradlew assemble --console=plain
 
       - uses: actions/upload-artifact@v4
         if: always()
