@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   scan:
-    name: Scan for minSdk 28 / Android 9 leftovers
+    name: Scan for minSdk 28 leftovers
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,58 +20,77 @@ jobs:
         shell: bash
         run: |
           set +e
-          EXCL=(--exclude-dir=.git --exclude-dir=build --exclude-dir=.gradle \
-                --exclude-dir=node_modules --exclude-dir=fixtures --exclude-dir=docs \
-                --exclude=*.md --exclude=*.png --exclude=*.json --exclude=*.tsv)
+          COMMON=(-rnI --exclude-dir=.git --exclude-dir=build --exclude-dir=.gradle \
+                  --exclude-dir=node_modules --exclude-dir=fixtures --exclude-dir=docs \
+                  --exclude=*.md --exclude=*.png --exclude=*.json --exclude=*.tsv \
+                  --exclude=check-minsdk.yml --exclude=check-minsdk-v2.yml)
           INC=(--include=*.kt --include=*.kts --include=*.java --include=*.xml \
                --include=*.gradle --include=*.properties --include=*.toml \
-               --include=*.yml --include=*.yaml)
+               --include=*.yml --include=*.yaml --include=*.ps1 --include=*.sh)
+          # "main" = real build inputs. Tests, CI and scripts are reported separately.
+          MAIN=(--exclude-dir=test --exclude-dir=androidTest --exclude-dir=.github --exclude-dir=scripts)
 
-          # 1. Every minSdk mention (for visibility)
-          echo "### All minSdk mentions" >> "$GITHUB_STEP_SUMMARY"
-          echo '```' >> "$GITHUB_STEP_SUMMARY"
-          grep -rniE "minSdk" "${EXCL[@]}" "${INC[@]}" . | tee /tmp/all.txt >> "$GITHUB_STEP_SUMMARY"
-          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          # Drop lines that are only comments
+          nocomment() { grep -vE '^[^:]+:[0-9]+:[[:space:]]*(//|\*|/\*|#)'; }
 
-          # 2. STRICT: minSdk set to 28 anywhere (fails the job)
-          # Matches: minSdk = 28, minSdkVersion("28"), setAttribute("android:minSdkVersion", "28"), ...
-          STRICT='minSdk[A-Za-z]*[^0-9]{0,15}28([^0-9]|$)'
-          grep -rnE "$STRICT" "${EXCL[@]}" "${INC[@]}" . > /tmp/strict.txt
+          # 1. minSdk or a floor/minimum constant set to 28
+          STRICT='minSdk[A-Za-z]*[^0-9]{0,15}28([^0-9]|$)|(floor|min_?sdk|min_?api|minimum|min_?version)[A-Za-z_]*[^0-9A-Za-z]{0,15}28([^0-9]|$)'
+          # 2. code that probably needs API 28+ (verify with lint)
+          HINTS='SDK_INT[[:space:]]*[<>=!]+[[:space:]]*(28|Build\.VERSION_CODES\.P)|VERSION_CODES\.P([^A-Za-z_]|$)|requireViewById|getMainExecutor|getLongVersionCode|longVersionCode|SigningInfo|getApkContentsSigners|isCurrentThread|setScreenReaderFocusable|setAccessibilityHeading|AccessibilityPaneTitle|ImageDecoder|setDisplayCutout'
+          # 3. quoted "28" in build inputs
+          QUOTED='"28"|'"'"'28'"'"
 
-          # 3. WARN: code that needs Android 9 APIs or mentions API 28
-          WARN='VERSION_CODES\.P([^A-Za-z_]|$)|SDK_INT[[:space:]]*[<>=!]+[[:space:]]*28|API[ _]?(level )?28|Android 9|android-28|compileSdk[^0-9]{0,15}28'
-          grep -rnE "$WARN" "${EXCL[@]}" "${INC[@]}" . > /tmp/warn.txt
+          grep "${COMMON[@]}" "${INC[@]}" "${MAIN[@]}" -iE "$STRICT" . | nocomment > /tmp/strict.txt
+          grep "${COMMON[@]}" "${INC[@]}" "${MAIN[@]}" -E "$HINTS" . | nocomment > /tmp/hints.txt
+          grep "${COMMON[@]}" "${INC[@]}" "${MAIN[@]}" -E "$QUOTED" . | nocomment > /tmp/quoted.txt
+          grep "${COMMON[@]}" "${INC[@]}" -iE "uses-sdk" "${MAIN[@]}" . | nocomment > /tmp/usessdk.txt
+          # Tests, CI and scripts that still assert 28 (report only, not a failure)
+          grep "${COMMON[@]}" "${INC[@]}" -iE "$STRICT" . | nocomment | grep -vFxf /tmp/strict.txt > /tmp/ci.txt
 
-          echo "### minSdk set to 28 (must be empty)" >> "$GITHUB_STEP_SUMMARY"
-          echo '```' >> "$GITHUB_STEP_SUMMARY"
-          cat /tmp/strict.txt >> "$GITHUB_STEP_SUMMARY"
-          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          show() {
+            echo ""
+            echo "=== $1 ($(wc -l < "$2" | tr -d ' ')) ==="
+            cat "$2"
+          }
+          {
+            show "MUST FIX: minSdk or floor set to 28 in build inputs" /tmp/strict.txt
+            show "CHECK: quoted \"28\" in build inputs" /tmp/quoted.txt
+            show "CHECK: uses-sdk in build inputs" /tmp/usessdk.txt
+            show "HINTS: API 28+ calls, confirm with lint" /tmp/hints.txt
+            show "INFO: tests/CI/scripts that still expect 28" /tmp/ci.txt
+          } | tee -a /tmp/report.txt
 
-          echo "### Android 9 / API 28 hints (review)" >> "$GITHUB_STEP_SUMMARY"
-          echo '```' >> "$GITHUB_STEP_SUMMARY"
-          cat /tmp/warn.txt >> "$GITHUB_STEP_SUMMARY"
-          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          {
+            echo '```'
+            cat /tmp/report.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
 
-          # Inline annotations on the commit
           while IFS=: read -r file line rest; do
-            echo "::error file=${file#./},line=${line}::minSdk 28 leftover: ${rest}"
+            echo "::error file=${file#./},line=${line}::minSdk/floor 28: ${rest}"
           done < /tmp/strict.txt
           while IFS=: read -r file line rest; do
-            echo "::warning file=${file#./},line=${line}::Android 9 / API 28 hint: ${rest}"
-          done < /tmp/warn.txt
+            echo "::warning file=${file#./},line=${line}::API 28+ hint: ${rest}"
+          done < /tmp/hints.txt
 
-          echo "strict hits: $(wc -l < /tmp/strict.txt), warn hits: $(wc -l < /tmp/warn.txt)"
           if [ -s /tmp/strict.txt ]; then
-            echo "FAIL: minSdk 28 still present"
+            echo "FAIL: minSdk/floor 28 still present in build inputs"
             exit 1
           fi
-          echo "OK: no minSdk 28 found"
+          echo "OK: no minSdk/floor 28 in build inputs"
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: minsdk-report
+          path: /tmp/report.txt
+          if-no-files-found: ignore
 
   lint:
     name: Lint extensions for API 28+ calls (best effort)
     runs-on: ubuntu-latest
     continue-on-error: true
-    needs: scan
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
