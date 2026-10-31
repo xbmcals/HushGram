@@ -26,7 +26,7 @@ jobs:
 
       # Backstop: fails if any 28+/29+ call is still unguarded.
       - name: Lint (NewApi must be clean)
-        run: ./gradlew lintDebug
+        run: chmod +x ./gradlew && ./gradlew lintDebug
 
       # Replace with whatever upstream's own build/release workflow runs
       # (see .github/workflows/ from SysAdminDoc/HushGram).
