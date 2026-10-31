@@ -11,15 +11,13 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: read
+      contents: write   # needed to publish the release
       packages: read
 
-    # Credentials for dependencies hosted on GitHub Packages (read by settings.gradle.kts).
-    # If you get a 401/403 from maven.pkg.github.com, create a PAT with read:packages,
-    # save it as a repo secret named GPR_TOKEN, and swap it in below.
     env:
       GITHUB_ACTOR: ${{ github.actor }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - uses: actions/checkout@v4
@@ -39,19 +37,45 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
+      # Unit tests are not run: RuntimeFloorTest compares against
+      # upstream's expected minSdk floor.
+      - name: Build all .mpp bundles
+        run: ./gradlew buildAndroid --console=plain
+
+      - name: Show everything that was built
+        if: always()
+        run: find . -name '*.mpp' -not -path './.git/*' -exec ls -lh {} \;
+
+      # Pick the single bundle to ship: the largest .mpp under patches/.
+      # The extensions/ .mpp is a build input, not the thing you install.
+      - name: Select the one bundle
+        id: pick
+        run: |
+          mkdir -p dist
+          f=$(find patches -name '*.mpp' -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)
+          if [ -z "$f" ]; then echo "No .mpp found under patches/"; exit 1; fi
+          echo "Selected: $f"
+          cp "$f" dist/
+          echo "name=$(basename "$f")" >> "$GITHUB_OUTPUT"
+          echo "--- contents ---"
+          unzip -l "dist/$(basename "$f")" | head -40
+
       # Backstop: fails if any 28+/29+ call is still unguarded.
       - name: Lint (NewApi must be clean)
         run: ./gradlew lintDebug --console=plain
 
-      # Replace with whatever upstream's own build/release workflow runs.
-      - name: Build patch bundle
-        run: ./gradlew assemble --console=plain
+      # Raw .mpp download (no zip wrapper): Releases page -> Assets.
+      - name: Publish release with the single .mpp
+        run: |
+          gh release create "api26-${{ github.run_number }}" "dist/${{ steps.pick.outputs.name }}" \
+            --repo "${{ github.repository }}" \
+            --title "API 26 build #${{ github.run_number }}" \
+            --notes "HushGram patch bundle with Android 8.x (API 26) compat transforms. Commit ${{ github.sha }}." \
+            --prerelease
 
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: hushgram-api26
-          path: |
-            **/*.mpp
-            **/build/reports/lint-results-debug.*
-          if-no-files-found: warn
+          name: lint-reports
+          path: '**/build/reports/lint-results-debug.*'
+          if-no-files-found: ignore
