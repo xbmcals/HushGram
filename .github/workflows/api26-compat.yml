@@ -9,6 +9,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: read
+
+    # Credentials for dependencies hosted on GitHub Packages (read by settings.gradle.kts).
+    # If you get a 401/403 from maven.pkg.github.com, create a PAT with read:packages,
+    # save it as a repo secret named GPR_TOKEN, and swap it in below.
+    env:
+      GITHUB_ACTOR: ${{ github.actor }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     steps:
       - uses: actions/checkout@v4
 
@@ -19,19 +31,21 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v4
 
-      # Rewrites API 28/29 calls in the checkout only; nothing is committed,
-      # so `main` stays identical to upstream and syncs cleanly.
+      # Rewrites API 28/29 calls in this checkout only; nothing is committed,
+      # so main stays identical to upstream and syncs cleanly.
       - name: Apply API 26 compat transforms
         run: python3 scripts/api26/apply.py
 
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
       # Backstop: fails if any 28+/29+ call is still unguarded.
       - name: Lint (NewApi must be clean)
-        run: chmod +x ./gradlew && ./gradlew lintDebug
+        run: ./gradlew lintDebug --console=plain
 
-      # Replace with whatever upstream's own build/release workflow runs
-      # (see .github/workflows/ from SysAdminDoc/HushGram).
+      # Replace with whatever upstream's own build/release workflow runs.
       - name: Build patch bundle
-        run: ./gradlew build
+        run: ./gradlew build --console=plain
 
       - uses: actions/upload-artifact@v4
         if: always()
