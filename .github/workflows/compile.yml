@@ -1,0 +1,89 @@
+name: Build (Android 8.x / API 26 compat)
+
+on:
+  workflow_dispatch:
+    inputs:
+      launcher_patch:
+        description: 'Make the icon open InstagramMainActivity directly (injected into an existing resource patch)'
+        type: choice
+        options: ['on', 'off']
+        default: 'on'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: read
+
+    env:
+      GITHUB_ACTOR: ${{ github.actor }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      # Rewrites API 28/29 calls in this checkout only; nothing is pushed,
+      # so main stays identical to upstream and syncs cleanly.
+      - name: Apply API 26 compat transforms
+        run: python3 scripts/api26/apply.py
+        env:
+          LAUNCHER_PATCH: ${{ inputs.launcher_patch || 'on' }}
+
+      # Upstream's scripts/build-inputs.gradle refuses to build until new/changed
+      # repository inputs are staged. Staging is local to this runner only.
+      - name: Stage changes for upstream's input check
+        run: git add -A
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      # Unit tests are not run: RuntimeFloorTest compares against
+      # upstream's expected minSdk floor.
+      - name: Build all .mpp bundles
+        run: ./gradlew buildAndroid --console=plain
+
+      - name: Show the guard script (only if the build failed)
+        if: failure()
+        run: sed -n 1,60p scripts/build-inputs.gradle
+
+      - name: Show everything that was built
+        if: always()
+        run: find . -name '*.mpp' -not -path './.git/*' -exec ls -lh {} \;
+
+      # Pick the single bundle to ship: the largest .mpp under patches/.
+      # The extensions/ .mpp is a build input, not the thing you install.
+      - name: Select the one bundle
+        run: |
+          mkdir -p dist
+          f=$(find patches -name '*.mpp' -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)
+          if [ -z "$f" ]; then echo "No .mpp found under patches/"; exit 1; fi
+          echo "Selected: $f"
+          cp "$f" dist/
+          unzip -l "dist/$(basename "$f")" | head -40
+
+      # Backstop: fails if any 28+/29+ call is still unguarded.
+      - name: Lint (NewApi must be clean)
+        run: ./gradlew lintDebug --console=plain
+
+      # dist/ holds exactly one file, so the zip has the .mpp at its root.
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hushgram-api26
+          path: dist/*.mpp
+          if-no-files-found: error
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lint-reports
+          path: '**/build/reports/lint-results-debug.*'
+          if-no-files-found: ignore
