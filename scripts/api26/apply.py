@@ -42,6 +42,14 @@ RULES = [
      r"\b(\w+)\.getDisplayCutout\(\)", r"Api26Compat.displayCutout(\1)"),
     ("DisplayCutout.getSafeInset*", None,
      r"\b(\w+)\.getSafeInset(Left|Top|Right|Bottom)\(\)", r"Api26Compat.safeInset\2(\1)"),
+    # TextClassifier language detection is API 29. Below that, no detection: the result is null and
+    # the loop over its hypotheses runs zero times, so the caller sees "no language found".
+    ("CaptionLanguage: detectLanguage", "CaptionLanguage.java",
+     r"TextLanguage result = classifier\.detectLanguage(\([^\n]*\));",
+     r"TextLanguage result = Api26Compat.belowApi29() ? null : classifier.detectLanguage\1;"),
+    ("CaptionLanguage: hypothesis count", "CaptionLanguage.java",
+     r"(?<!: )\bresult\.getLocaleHypothesisCount\(\)",
+     "(result == null ? 0 : result.getLocaleHypothesisCount())"),
     ("MediaStore.Downloads.EXTERNAL_CONTENT_URI", None,
      r"\bMediaStore\.Downloads\.EXTERNAL_CONTENT_URI", "Api26Compat.downloadsUri()"),
     # THE CRASH FIX. Instagram's own check (X.01gY.A02) throws SecurityException(X.0ezk,
@@ -210,13 +218,97 @@ def force_min_sdk():
                 print(f"minSdk set to {MIN_SDK} in {path.relative_to(ROOT)}")
 
 
+
+def _match_paren(src, open_index):
+    """Index of the ')' matching the '(' at open_index, skipping strings, chars and comments."""
+    depth, i, n = 0, open_index, len(src)
+    while i < n:
+        c = src[i]
+        if c in "\"'":
+            q = c
+            i += 1
+            while i < n and src[i] != q:
+                i += 2 if src[i] == "\\" else 1
+        elif src.startswith("//", i):
+            i = src.find("\n", i)
+            if i < 0:
+                return -1
+        elif src.startswith("/*", i):
+            i = src.find("*/", i)
+            if i < 0:
+                return -1
+            i += 1
+        elif c == "(":
+            depth += 1
+        elif c == ")":
+            depth -= 1
+            if depth == 0:
+                return i
+        i += 1
+    return -1
+
+
+def hook_header_picture(src):
+    """ImageDecoder is API 28. Below that, decode with BitmapFactory instead (no per-pixel resizing
+    callback, just a power-of-two downscale to at most 2048 px)."""
+    if "Api26Compat.decodeBitmapDownscaled" in src:
+        return src, 0
+    m = re.search(r"^[ \t]*(picture\s*=\s*ImageDecoder\.decodeBitmap\()", src, re.M)
+    if not m:
+        return src, 0
+    start = m.start(1)
+    close = _match_paren(src, m.end(1) - 1)
+    if close < 0:
+        return src, 0
+    end = close + 1
+    while end < len(src) and src[end] in " \t\r\n":
+        end += 1
+    if end >= len(src) or src[end] != ";":
+        return src, 0
+    stmt = src[start:end + 1]
+    wrapped = ("if (Api26Compat.belowApi28()) {\n"
+               "            picture = Api26Compat.decodeBitmapDownscaled(bytes, 2048);\n"
+               "        } else {\n            " + stmt + "\n        }")
+    return src[:start] + wrapped + src[end + 1:], 1
+
+
+FILE_HOOKS = {"HeaderPicture.java": ("HeaderPicture: ImageDecoder fallback", hook_header_picture)}
+
+# Files where guarded calls remain; lint can't follow Api26Compat's checks, so say so for the class.
+SUPPRESS_NEWAPI = {"HeaderPicture.java", "CaptionLanguage.java"}
+_CLASS_RE = re.compile(r"^(?:public\s+|final\s+|abstract\s+)*class\s+\w+", re.M)
+
+
+def add_newapi_suppression(src):
+    m = _CLASS_RE.search(src)
+    if not m:
+        return src
+    before = src[:m.start()]
+    block = re.search(r"((?:@[\w.]+(?:\([^)]*\))?\s*)+)$", before)
+    if block and "SuppressLint(" in block.group(1):
+        ann = block.group(1)
+        if '"NewApi"' in ann:
+            return src
+
+        def merge(x):
+            args = x.group(1).strip()
+            return 'SuppressLint({"NewApi", ' + (args[1:] if args.startswith("{") else args + "}") + ")"
+
+        ann = re.sub(r"SuppressLint\(\s*([^)]*?)\s*\)", merge, ann, count=1)
+        return before[:block.start(1)] + ann + src[m.start():]
+    return before + '@android.annotation.SuppressLint("NewApi")\n' + src[m.start():]
+
+
 def main():
     if not (ROOT / "extensions").is_dir():
         sys.exit(f"No extensions/ directory under {ROOT}")
 
-    force_min_sdk()
+    # Opt-in: the lint fix no longer depends on it, and it edits build configuration.
+    if os.environ.get("FORCE_MIN_SDK", "off").lower() == "on":
+        force_min_sdk()
 
     counts = {name: 0 for name, *_ in RULES}
+    counts.update({hook_name: 0 for hook_name, _ in FILE_HOOKS.values()})
     changed_files = []
 
     for path in sorted(ROOT.glob("extensions/**/src/main/java/**/*.java")):
@@ -229,6 +321,12 @@ def main():
                 continue
             src, n = re.subn(pattern, repl, src)
             counts[name] += n
+        if path.name in FILE_HOOKS:
+            hook_name, hook = FILE_HOOKS[path.name]
+            src, n = hook(src)
+            counts[hook_name] += n
+        if path.name in SUPPRESS_NEWAPI and src != original:
+            src = add_newapi_suppression(src)
         if src != original:
             if IMPORT_LINE not in src:
                 src = re.sub(r"^(package [^;]+;)", r"\1\n\n" + IMPORT_LINE, src, count=1, flags=re.M)
