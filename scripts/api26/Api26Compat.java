@@ -6,6 +6,8 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.content.pm.SigningInfo;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -38,6 +40,27 @@ public final class Api26Compat {
      */
     public static boolean belowApi28() {
         return SDK < 28;
+    }
+
+    /** True below Android 10 (TextClassifier language detection and similar need API 29). */
+    public static boolean belowApi29() {
+        return SDK < 29;
+    }
+
+    /**
+     * Fallback for ImageDecoder (API 28): decode with BitmapFactory, halving the size
+     * until the longer side is at most maxSide. Returns null if the bytes can't be decoded.
+     */
+    public static Bitmap decodeBitmapDownscaled(byte[] bytes, int maxSide) {
+        if (bytes == null || bytes.length == 0) return null;
+        BitmapFactory.Options bounds = new BitmapFactory.Options();
+        bounds.inJustDecodeBounds = true;
+        BitmapFactory.decodeByteArray(bytes, 0, bytes.length, bounds);
+        int sample = 1;
+        while (Math.max(bounds.outWidth, bounds.outHeight) / sample > maxSide) sample *= 2;
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inSampleSize = sample;
+        return BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);
     }
 
     /** Flags for getPackageInfo() that return signatures on every version. */
