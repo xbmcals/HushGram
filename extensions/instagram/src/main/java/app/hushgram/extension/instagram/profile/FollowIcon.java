@@ -281,7 +281,6 @@ final class FollowIcon {
         icon.setImageDrawable(new FollowBadge(context, mark.followsYou, SIZE_DP));
         String label = FriendshipStatus.text(mark.followsYou);
         icon.setContentDescription(label);
-        icon.setTooltipText(label);
         ViewGroup.LayoutParams params = row instanceof LinearLayout
                 ? new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT)
                 : new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
