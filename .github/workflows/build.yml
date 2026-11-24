@@ -13,9 +13,6 @@ on:
         type: choice
         options: ['off', 'on']
         default: 'off'
-  push:
-    branches: [main]
-    paths-ignore: ['**.md']
 
 jobs:
   build:
