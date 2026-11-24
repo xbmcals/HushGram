@@ -77,6 +77,7 @@ final class FeedCategory {
         boolean expandCaptions = build.contains(PatchFamily.EXPAND_CAPTIONS);
         boolean feedAudioIcon = build.contains(PatchFamily.FEED_AUDIO_ICON);
         boolean feedAutoScroll = build.contains(PatchFamily.FEED_AUTO_SCROLL);
+        boolean blockedPosts = build.contains(PatchFamily.BLOCKED_POSTS);
         boolean homeTopBar = build.contains(PatchFamily.HOME_TOP_BAR);
         boolean activityBubbles = build.contains(PatchFamily.ACTIVITY_BUBBLES);
         boolean feedViewHistory = build.contains(PatchFamily.FEED_VIEW_HISTORY);
@@ -84,7 +85,7 @@ final class FeedCategory {
                 || askLike || askRefresh || saveTray || postTime || hiddenLikes || backHome || homePlace || feedSound || feedTapPause || feedHoldFast || feedSeekBar || longPressZoom
                 || roundedCorners || carouselArrows || ambientLight
                 || fullScreen || feedFollow || editsLabel || headerLine || homeReels || feedSave || watchAgain || hideCaptions || expandCaptions || feedAudioIcon || feedAutoScroll || homeTopBar
-                || activityBubbles || menuItems
+                || activityBubbles || menuItems || blockedPosts
                 ? category(screen, L10n.t("Feed"), SettingsIcons.FEED,
                         L10n.t("Choose what Home shows and how it behaves.")) : null;
         if (following) {
@@ -286,6 +287,9 @@ final class FeedCategory {
             feed.addPreference(toggle(context, Settings.HOLD_FEED_VIDEO_KEEP_LONG, L10n.t("Only after a long hold"),
                     L10n.t("Keeps 2x only when you hold the video for about 3 seconds. Let go sooner and it goes back "
                             + "to normal speed.")));
+            feed.addPreference(toggle(context, Settings.HOLD_FEED_VIDEO_KEEP_BADGE, L10n.t("Show 2x after you let go"),
+                    L10n.t("A feed video that keeps playing at 2x shows Instagram's 2x and time labels in place of the "
+                            + "name until it goes back to normal speed.")));
             feed.addPreference(toggle(context, Settings.HOLD_FEED_VIDEO_KEEP_NAME, L10n.t("Keep the name while you hold"),
                     L10n.t("The name over a feed video stays while you hold it for 2x. Instagram's 2x and time labels "
                             + "don't show then.")));
@@ -464,6 +468,11 @@ final class FeedCategory {
                     L10n.t("Moves Home on to the next post by itself. A video moves on when it ends, a photo or "
                             + "carousel after Time on each post. Touch the screen to hold it.")));
             feed.addPreference(feedAutoScrollTimeRow(context));
+        }
+        if (blockedPosts) {
+            feed.addPreference(toggle(context, Settings.HIDE_BLOCKED_POSTS, L10n.t("Hide posts when you block someone"),
+                    L10n.t("When you block someone, their posts in Home go away right away instead of after you "
+                            + "refresh it.")));
         }
     }
 }

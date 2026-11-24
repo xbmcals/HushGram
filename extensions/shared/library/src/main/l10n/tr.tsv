@@ -978,6 +978,11 @@ The red dots and counts for new messages and notifications take the color you pi
 Icons in the accent color	Simgeler vurgu renginde
 Reel buttons in the accent color	Reels düğmeleri vurgu renginde
 The buttons beside a reel and their counts take the color you picked instead of white. Restart Instagram to see the change.	Bir reel'in yanındaki düğmeler ve sayıları beyaz yerine seçtiğin rengi alır. Değişikliği görmek için Instagram'ı yeniden başlat.
+Text in the accent color	Metin vurgu renginde
+Names, captions and other main text take the same color as the icons. Gray text stays gray. Restart Instagram to see the change.	Adlar, açıklamalar ve diğer ana metinler simgelerle aynı rengi alır. Gri metin gri kalır. Değişikliği görmek için Instagram'ı yeniden başlat.
+# context: Layout > Accent color switch. Saved is Instagram's own Saved page, in its label for this language.
+Filters in the accent color	Filtreler vurgu renginde
+The filters along the top of Saved take the color you picked, and the one you're on is filled with it. Restart Instagram to see the change.	Kaydedilenler'in üstündeki filtreler seçtiğin rengi alır, kullandığın filtre de bu renkle dolar. Değişikliği görmek için Instagram'ı yeniden başlat.
 Instagram's icons on the top bar, the tab bar and under posts take the color you picked. Text stays as it is. Restart Instagram to see the change.	Instagram'ın üst çubuktaki, sekme çubuğundaki ve gönderilerin altındaki simgeleri seçtiğin rengi alır. Metin olduğu gibi kalır. Değişikliği görmek için Instagram'ı yeniden başlat.
 Story rings in the accent color	Hikaye halkaları vurgu renginde
 Story rings take the color you picked instead of Instagram's gradient. A few other gradients share those colors and change with them. Restart Instagram to see the change.	Hikaye halkaları Instagram'ın gradyanı yerine seçtiğin rengi alır. Aynı renkleri kullanan birkaç başka gradyan da onlarla değişir. Değişikliği görmek için Instagram'ı yeniden başlat.
@@ -2581,6 +2586,10 @@ Tap sound volume	Dokunma sesi seviyesi
 Auto scroll in Home	Ana Sayfa'da otomatik kaydırma
 Moves Home on to the next post by itself. A video moves on when it ends, a photo or carousel after Time on each post. Touch the screen to hold it.	Ana Sayfa kendiliğinden sonraki gönderiye geçer. Video bitince, fotoğraf veya çoklu gönderi Gönderi başına süre dolunca geçer. Durdurmak için ekrana dokun.
 Time on each post	Gönderi başına süre
+# context: Feed settings: switch that takes a blocked account's posts out of Home as soon as the block goes through (#861)
+Hide posts when you block someone	Birini engelleyince gönderilerini gizle
+# context: Summary of Hide posts when you block someone, a Feed switch (#861)
+When you block someone, their posts in Home go away right away instead of after you refresh it.	Birini engellediğinde Ana Sayfa'daki gönderileri yenilemeyi beklemeden hemen kaybolur.
 # context: Reels settings: switch that lets a tap on the reel shown above an open comments sheet pause or play it, and a hold play it at 2x, without closing the comments (#665)
 Control the reel above comments	Yorumların üstündeki reel'i kontrol et
 # context: Summary of Control the reel above comments (#665)
@@ -2662,6 +2671,10 @@ A feed video you hold for 2x keeps playing at 2x after you let go. Hold it again
 Only after a long hold	Yalnızca uzun basınca
 # context: Summary of Only after a long hold, a switch under Keep 2x after you let go (#552)
 Keeps 2x only when you hold the video for about 3 seconds. Let go sooner and it goes back to normal speed.	2x yalnızca videoyu yaklaşık 3 saniye basılı tuttuğunda korunur. Daha erken bırakırsan normal hıza döner.
+# context: Feed settings: a switch under Keep 2x after you let go that leaves Instagram's 2x label on a feed video kept at 2x (#860)
+Show 2x after you let go	Bırakınca 2x göster
+# context: Summary of Show 2x after you let go, a switch under Keep 2x after you let go (#860)
+A feed video that keeps playing at 2x shows Instagram's 2x and time labels in place of the name until it goes back to normal speed.	2x hızda oynamaya devam eden bir akış videosu, normal hıza dönene kadar adın yerine Instagram'ın 2x ve süre etiketlerini gösterir.
 # context: Feed settings: a switch under Hold for 2x on feed videos that keeps the poster's name over the video while it's held at 2x (#552)
 Keep the name while you hold	Basılı tutarken adı koru
 # context: Summary of Keep the name while you hold, a switch under Hold for 2x on feed videos (#552)
@@ -2729,6 +2742,10 @@ Hold a finger on the liquid pill's bubble, or slide it across the tabs, and the 
 # context: Keep story viewers, its Stories settings rows and the Story viewers page.
 Keep story viewers	Hikaye görüntüleyenleri tut
 Each time you open who viewed one of your stories, the list is kept on this phone and set beside your followers. Nothing extra is asked of Instagram. Turn it off and it stops at once.	Hikayelerinden birini kimin gördüğünü her açtığında liste bu telefonda tutulur ve takipçilerinin yanına konur. Instagram'dan fazladan bir şey istenmez. Kapatırsan hemen durur.
+# context: Stories > Keep story viewers, the switch for a search bar HushGram adds to Instagram's list of who viewed your story, and the bar's own words.
+Search bar in the viewer list	Görüntüleyenler listesinde arama çubuğu
+Puts a Search viewers bar at the top of the list of who viewed your story. It searches the viewers kept on this phone, the ones Instagram has listed so far.	Hikayeni görüntüleyenler listesinin üstüne bir Görüntüleyenlerde ara çubuğu koyar. Bu telefonda tutulan görüntüleyenlerde, yani Instagram'ın şimdiye kadar listelediklerinde arar.
+Search viewers	Görüntüleyenlerde ara
 Story viewers	Hikaye görüntüleyenleri
 Nothing here yet. With Keep story viewers on, open who viewed one of your stories in Instagram and the list is kept here.	Henüz bir şey yok. Hikaye görüntüleyenleri tut açıkken Instagram'da hikayelerinden birini kimin gördüğünü aç, liste burada tutulur.
 %1$d story kept since %2$s. Tap to see who viewed it and who has no view recorded.	%2$s tarihinden beri %1$d hikaye tutuluyor. Kimin gördüğünü ve kimin görüntülemesinin kaydedilmediğini görmek için dokun.

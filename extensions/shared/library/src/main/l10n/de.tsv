@@ -978,6 +978,11 @@ The red dots and counts for new messages and notifications take the color you pi
 Icons in the accent color	Symbole in der Akzentfarbe
 Reel buttons in the accent color	Reel-Tasten in der Akzentfarbe
 The buttons beside a reel and their counts take the color you picked instead of white. Restart Instagram to see the change.	Die Tasten neben einem Reel und ihre Zahlen nehmen statt Weiß die Farbe an, die du ausgewählt hast. Starte Instagram neu, um die Änderung zu sehen.
+Text in the accent color	Text in der Akzentfarbe
+Names, captions and other main text take the same color as the icons. Gray text stays gray. Restart Instagram to see the change.	Namen, Bildunterschriften und anderer Haupttext nehmen dieselbe Farbe an wie die Symbole. Grauer Text bleibt grau. Starte Instagram neu, um die Änderung zu sehen.
+# context: Layout > Accent color switch. Saved is Instagram's own Saved page, in its label for this language.
+Filters in the accent color	Filter in der Akzentfarbe
+The filters along the top of Saved take the color you picked, and the one you're on is filled with it. Restart Instagram to see the change.	Die Filter oben in Gespeichert nehmen die Farbe an, die du ausgewählt hast, und der gewählte Filter wird damit gefüllt. Starte Instagram neu, um die Änderung zu sehen.
 Instagram's icons on the top bar, the tab bar and under posts take the color you picked. Text stays as it is. Restart Instagram to see the change.	Instagrams Symbole in der oberen Leiste, in der Tab-Leiste und unter Beiträgen nehmen die Farbe an, die du ausgewählt hast. Text bleibt, wie er ist. Starte Instagram neu, um die Änderung zu sehen.
 Story rings in the accent color	Story-Ringe in der Akzentfarbe
 Story rings take the color you picked instead of Instagram's gradient. A few other gradients share those colors and change with them. Restart Instagram to see the change.	Story-Ringe nehmen die Farbe an, die du ausgewählt hast, statt Instagrams Farbverlauf. Ein paar andere Farbverläufe teilen sich diese Farben und ändern sich mit. Starte Instagram neu, um die Änderung zu sehen.
@@ -2581,6 +2586,10 @@ Tap sound volume	Lautstärke des Tipptons
 Auto scroll in Home	Automatisches Scrollen auf der Startseite
 Moves Home on to the next post by itself. A video moves on when it ends, a photo or carousel after Time on each post. Touch the screen to hold it.	Die Startseite geht von selbst zum nächsten Beitrag weiter. Ein Video, wenn es endet, ein Foto oder Karussell nach „Zeit pro Beitrag“. Berühre den Bildschirm, um es anzuhalten.
 Time on each post	Zeit pro Beitrag
+# context: Feed settings: switch that takes a blocked account's posts out of Home as soon as the block goes through (#861)
+Hide posts when you block someone	Beiträge beim Blockieren ausblenden
+# context: Summary of Hide posts when you block someone, a Feed switch (#861)
+When you block someone, their posts in Home go away right away instead of after you refresh it.	Wenn du jemanden blockierst, verschwinden seine Beiträge auf der Startseite sofort statt erst nach dem Aktualisieren.
 # context: Reels settings: switch that lets a tap on the reel shown above an open comments sheet pause or play it, and a hold play it at 2x, without closing the comments (#665)
 Control the reel above comments	Reel über den Kommentaren steuern
 # context: Summary of Control the reel above comments (#665)
@@ -2662,6 +2671,10 @@ A feed video you hold for 2x keeps playing at 2x after you let go. Hold it again
 Only after a long hold	Nur nach langem Halten
 # context: Summary of Only after a long hold, a switch under Keep 2x after you let go (#552)
 Keeps 2x only when you hold the video for about 3 seconds. Let go sooner and it goes back to normal speed.	Behält 2x nur, wenn du das Video etwa 3 Sekunden gedrückt hältst. Lässt du früher los, kehrt es zur normalen Geschwindigkeit zurück.
+# context: Feed settings: a switch under Keep 2x after you let go that leaves Instagram's 2x label on a feed video kept at 2x (#860)
+Show 2x after you let go	2x nach dem Loslassen zeigen
+# context: Summary of Show 2x after you let go, a switch under Keep 2x after you let go (#860)
+A feed video that keeps playing at 2x shows Instagram's 2x and time labels in place of the name until it goes back to normal speed.	Ein Feed-Video, das mit 2x weiterläuft, zeigt statt des Namens die 2x- und Zeitanzeige von Instagram, bis es wieder normal schnell läuft.
 # context: Feed settings: a switch under Hold for 2x on feed videos that keeps the poster's name over the video while it's held at 2x (#552)
 Keep the name while you hold	Namen beim Halten zeigen
 # context: Summary of Keep the name while you hold, a switch under Hold for 2x on feed videos (#552)
@@ -2729,6 +2742,10 @@ Hold a finger on the liquid pill's bubble, or slide it across the tabs, and the 
 # context: Keep story viewers, its Stories settings rows and the Story viewers page.
 Keep story viewers	Story-Zuschauer speichern
 Each time you open who viewed one of your stories, the list is kept on this phone and set beside your followers. Nothing extra is asked of Instagram. Turn it off and it stops at once.	Jedes Mal, wenn du öffnest, wer eine deiner Stories angesehen hat, wird die Liste auf diesem Handy gespeichert und neben deine Follower gestellt. Instagram wird um nichts zusätzlich gebeten. Schalte es aus und es hört sofort auf.
+# context: Stories > Keep story viewers, the switch for a search bar HushGram adds to Instagram's list of who viewed your story, and the bar's own words.
+Search bar in the viewer list	Suchleiste in der Zuschauerliste
+Puts a Search viewers bar at the top of the list of who viewed your story. It searches the viewers kept on this phone, the ones Instagram has listed so far.	Setzt eine Leiste „Zuschauer suchen“ oben in die Liste, wer deine Story angesehen hat. Sie durchsucht die auf diesem Handy gespeicherten Zuschauer, also die, die Instagram bisher aufgelistet hat.
+Search viewers	Zuschauer suchen
 Story viewers	Story-Zuschauer
 Nothing here yet. With Keep story viewers on, open who viewed one of your stories in Instagram and the list is kept here.	Noch nichts da. Ist Story-Zuschauer speichern an, öffne in Instagram, wer eine deiner Stories angesehen hat, und die Liste wird hier gespeichert.
 %1$d story kept since %2$s. Tap to see who viewed it and who has no view recorded.	%1$d Story seit %2$s gespeichert. Tippe, um zu sehen, wer sie angesehen hat und von wem kein Aufruf erfasst ist.

@@ -971,6 +971,11 @@ The red dots and counts for new messages and notifications take the color you pi
 Icons in the accent color	Biểu tượng theo màu nhấn
 Reel buttons in the accent color	Nút reel theo màu nhấn
 The buttons beside a reel and their counts take the color you picked instead of white. Restart Instagram to see the change.	Các nút bên cạnh reel và số đếm của chúng lấy màu bạn đã chọn thay cho màu trắng. Khởi động lại Instagram để thấy thay đổi.
+Text in the accent color	Văn bản theo màu nhấn
+Names, captions and other main text take the same color as the icons. Gray text stays gray. Restart Instagram to see the change.	Tên, chú thích và văn bản chính khác lấy cùng màu với biểu tượng. Văn bản màu xám vẫn giữ màu xám. Khởi động lại Instagram để thấy thay đổi.
+# context: Layout > Accent color switch. Saved is Instagram's own Saved page, in its label for this language.
+Filters in the accent color	Bộ lọc theo màu nhấn
+The filters along the top of Saved take the color you picked, and the one you're on is filled with it. Restart Instagram to see the change.	Các bộ lọc ở đầu mục Đã lưu lấy màu bạn đã chọn, và bộ lọc đang dùng được tô bằng màu đó. Khởi động lại Instagram để thấy thay đổi.
 Instagram's icons on the top bar, the tab bar and under posts take the color you picked. Text stays as it is. Restart Instagram to see the change.	Biểu tượng của Instagram trên thanh trên cùng, thanh tab và dưới bài viết lấy màu bạn đã chọn. Văn bản giữ nguyên. Hãy khởi động lại Instagram để thấy thay đổi.
 Story rings in the accent color	Vòng tin theo màu nhấn
 Story rings take the color you picked instead of Instagram's gradient. A few other gradients share those colors and change with them. Restart Instagram to see the change.	Vòng tin lấy màu bạn đã chọn thay cho dải màu của Instagram. Một vài dải màu khác dùng chung các màu đó và đổi theo. Khởi động lại Instagram để thấy thay đổi.
@@ -2496,6 +2501,10 @@ Tap sound volume	Âm lượng âm thanh chạm
 Auto scroll in Home	Tự động cuộn ở Trang chủ
 Moves Home on to the next post by itself. A video moves on when it ends, a photo or carousel after Time on each post. Touch the screen to hold it.	Trang chủ tự chuyển sang bài viết tiếp theo. Video chuyển khi phát xong, ảnh hoặc bài nhiều trang chuyển sau Thời gian mỗi bài viết. Chạm vào màn hình để giữ lại.
 Time on each post	Thời gian mỗi bài viết
+# context: Feed settings: switch that takes a blocked account's posts out of Home as soon as the block goes through (#861)
+Hide posts when you block someone	Ẩn bài viết khi bạn chặn ai đó
+# context: Summary of Hide posts when you block someone, a Feed switch (#861)
+When you block someone, their posts in Home go away right away instead of after you refresh it.	Khi bạn chặn ai đó, bài viết của họ ở Trang chủ biến mất ngay mà không cần làm mới.
 # context: Reels settings: switch that lets a tap on the reel shown above an open comments sheet pause or play it, and a hold play it at 2x, without closing the comments (#665)
 Control the reel above comments	Điều khiển reel phía trên bình luận
 # context: Summary of Control the reel above comments (#665)
@@ -2577,6 +2586,10 @@ A feed video you hold for 2x keeps playing at 2x after you let go. Hold it again
 Only after a long hold	Chỉ sau khi giữ lâu
 # context: Summary of Only after a long hold, a switch under Keep 2x after you let go (#552)
 Keeps 2x only when you hold the video for about 3 seconds. Let go sooner and it goes back to normal speed.	Chỉ giữ 2x khi bạn giữ video khoảng 3 giây. Thả tay sớm hơn thì video trở về tốc độ bình thường.
+# context: Feed settings: a switch under Keep 2x after you let go that leaves Instagram's 2x label on a feed video kept at 2x (#860)
+Show 2x after you let go	Hiện 2x sau khi thả tay
+# context: Summary of Show 2x after you let go, a switch under Keep 2x after you let go (#860)
+A feed video that keeps playing at 2x shows Instagram's 2x and time labels in place of the name until it goes back to normal speed.	Video ở bảng feed vẫn phát ở 2x sẽ hiện nhãn 2x và thời gian của Instagram thay cho tên cho đến khi trở về tốc độ bình thường.
 # context: Feed settings: a switch under Hold for 2x on feed videos that keeps the poster's name over the video while it's held at 2x (#552)
 Keep the name while you hold	Giữ tên khi nhấn giữ
 # context: Summary of Keep the name while you hold, a switch under Hold for 2x on feed videos (#552)
@@ -2644,6 +2657,10 @@ Hold a finger on the liquid pill's bubble, or slide it across the tabs, and the 
 # context: Keep story viewers, its Stories settings rows and the Story viewers page.
 Keep story viewers	Giữ danh sách người xem tin
 Each time you open who viewed one of your stories, the list is kept on this phone and set beside your followers. Nothing extra is asked of Instagram. Turn it off and it stops at once.	Mỗi lần bạn mở xem ai đã xem một tin của bạn, danh sách sẽ được giữ trên điện thoại này và đặt cạnh người theo dõi của bạn. Không yêu cầu thêm gì từ Instagram. Tắt đi là dừng ngay.
+# context: Stories > Keep story viewers, the switch for a search bar HushGram adds to Instagram's list of who viewed your story, and the bar's own words.
+Search bar in the viewer list	Thanh tìm kiếm trong danh sách người xem
+Puts a Search viewers bar at the top of the list of who viewed your story. It searches the viewers kept on this phone, the ones Instagram has listed so far.	Đặt thanh Tìm người xem ở đầu danh sách những người đã xem tin của bạn. Thanh này tìm trong những người xem được giữ trên điện thoại này, tức là những người Instagram đã liệt kê đến giờ.
+Search viewers	Tìm người xem
 Story viewers	Người xem tin
 Nothing here yet. With Keep story viewers on, open who viewed one of your stories in Instagram and the list is kept here.	Chưa có gì. Khi bật Giữ danh sách người xem tin, hãy mở xem ai đã xem một tin của bạn trong Instagram và danh sách sẽ được giữ ở đây.
 %1$d story kept since %2$s. Tap to see who viewed it and who has no view recorded.	Đã giữ %1$d tin từ %2$s. Nhấn để xem ai đã xem và ai chưa có lượt xem nào được ghi lại.

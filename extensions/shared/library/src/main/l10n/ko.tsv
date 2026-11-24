@@ -977,6 +977,11 @@ The red dots and counts for new messages and notifications take the color you pi
 Icons in the accent color	아이콘을 강조 색상으로
 Reel buttons in the accent color	릴스 버튼을 강조 색상으로
 The buttons beside a reel and their counts take the color you picked instead of white. Restart Instagram to see the change.	릴스 옆의 버튼과 숫자가 흰색 대신 선택한 색상으로 바뀝니다. 변경 사항을 보려면 Instagram을 다시 시작하세요.
+Text in the accent color	텍스트를 강조 색상으로
+Names, captions and other main text take the same color as the icons. Gray text stays gray. Restart Instagram to see the change.	이름, 캡션 및 기타 주요 텍스트가 아이콘과 같은 색상으로 바뀝니다. 회색 텍스트는 회색으로 유지됩니다. 변경 사항을 보려면 Instagram을 다시 시작하세요.
+# context: Layout > Accent color switch. Saved is Instagram's own Saved page, in its label for this language.
+Filters in the accent color	필터를 강조 색상으로
+The filters along the top of Saved take the color you picked, and the one you're on is filled with it. Restart Instagram to see the change.	저장됨 상단의 필터가 선택한 색상으로 바뀌고, 현재 보고 있는 필터는 그 색상으로 채워집니다. 변경 사항을 보려면 Instagram을 다시 시작하세요.
 Instagram's icons on the top bar, the tab bar and under posts take the color you picked. Text stays as it is. Restart Instagram to see the change.	상단 바, 탭 바, 게시물 아래에 있는 Instagram 아이콘이 선택한 색상으로 바뀝니다. 텍스트는 그대로 유지됩니다. 변경 사항을 보려면 Instagram을 다시 시작하세요.
 Story rings in the accent color	스토리 링을 강조 색상으로
 Story rings take the color you picked instead of Instagram's gradient. A few other gradients share those colors and change with them. Restart Instagram to see the change.	스토리 링이 Instagram의 그라데이션 대신 선택한 색상으로 바뀝니다. 같은 색상을 쓰는 다른 그라데이션 몇 가지도 함께 바뀝니다. 변경 사항을 보려면 Instagram을 다시 시작하세요.
@@ -2580,6 +2585,10 @@ Tap sound volume	터치음 음량
 Auto scroll in Home	홈 자동 스크롤
 Moves Home on to the next post by itself. A video moves on when it ends, a photo or carousel after Time on each post. Touch the screen to hold it.	홈이 저절로 다음 게시물로 넘어갑니다. 동영상은 끝나면, 사진이나 캐러셀은 게시물당 시간이 지나면 넘어갑니다. 화면을 터치하면 멈춥니다.
 Time on each post	게시물당 시간
+# context: Feed settings: switch that takes a blocked account's posts out of Home as soon as the block goes through (#861)
+Hide posts when you block someone	차단하면 게시물 숨기기
+# context: Summary of Hide posts when you block someone, a Feed switch (#861)
+When you block someone, their posts in Home go away right away instead of after you refresh it.	누군가를 차단하면 홈에 있는 그 사람의 게시물이 새로고침하지 않아도 바로 사라집니다.
 # context: Reels settings: switch that lets a tap on the reel shown above an open comments sheet pause or play it, and a hold play it at 2x, without closing the comments (#665)
 Control the reel above comments	댓글 위 릴스 제어
 # context: Summary of Control the reel above comments (#665)
@@ -2661,6 +2670,10 @@ A feed video you hold for 2x keeps playing at 2x after you let go. Hold it again
 Only after a long hold	길게 눌렀을 때만
 # context: Summary of Only after a long hold, a switch under Keep 2x after you let go (#552)
 Keeps 2x only when you hold the video for about 3 seconds. Let go sooner and it goes back to normal speed.	동영상을 약 3초 동안 길게 눌렀을 때만 2배속을 유지합니다. 더 빨리 손을 떼면 보통 속도로 돌아갑니다.
+# context: Feed settings: a switch under Keep 2x after you let go that leaves Instagram's 2x label on a feed video kept at 2x (#860)
+Show 2x after you let go	손을 뗀 후 2배속 표시
+# context: Summary of Show 2x after you let go, a switch under Keep 2x after you let go (#860)
+A feed video that keeps playing at 2x shows Instagram's 2x and time labels in place of the name until it goes back to normal speed.	2배속으로 계속 재생되는 피드 동영상에는 보통 속도로 돌아갈 때까지 이름 대신 Instagram의 2배속 및 시간 표시가 나타납니다.
 # context: Feed settings: a switch under Hold for 2x on feed videos that keeps the poster's name over the video while it's held at 2x (#552)
 Keep the name while you hold	길게 누르는 동안 이름 유지
 # context: Summary of Keep the name while you hold, a switch under Hold for 2x on feed videos (#552)
@@ -2728,6 +2741,10 @@ Hold a finger on the liquid pill's bubble, or slide it across the tabs, and the 
 # context: Keep story viewers, its Stories settings rows and the Story viewers page.
 Keep story viewers	스토리 조회자 보관
 Each time you open who viewed one of your stories, the list is kept on this phone and set beside your followers. Nothing extra is asked of Instagram. Turn it off and it stops at once.	내 스토리를 누가 봤는지 열 때마다 그 목록이 이 휴대폰에 보관되고 팔로워 옆에 나란히 놓입니다. Instagram에 추가로 요청하는 것은 없습니다. 끄면 바로 멈춥니다.
+# context: Stories > Keep story viewers, the switch for a search bar HushGram adds to Instagram's list of who viewed your story, and the bar's own words.
+Search bar in the viewer list	조회자 목록의 검색창
+Puts a Search viewers bar at the top of the list of who viewed your story. It searches the viewers kept on this phone, the ones Instagram has listed so far.	내 스토리를 본 사람 목록 맨 위에 조회자 검색 창을 넣습니다. 이 휴대폰에 보관된 조회자, 즉 Instagram이 지금까지 보여 준 조회자 중에서 검색합니다.
+Search viewers	조회자 검색
 Story viewers	스토리 조회자
 Nothing here yet. With Keep story viewers on, open who viewed one of your stories in Instagram and the list is kept here.	아직 없습니다. 스토리 조회자 보관을 켠 상태에서 Instagram에서 내 스토리를 누가 봤는지 열면 목록이 여기에 보관됩니다.
 %1$d story kept since %2$s. Tap to see who viewed it and who has no view recorded.	%2$s부터 스토리 %1$d개를 보관했습니다. 누가 봤는지, 조회 기록이 없는 사람은 누구인지 보려면 누르세요.

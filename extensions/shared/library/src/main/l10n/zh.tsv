@@ -1664,6 +1664,11 @@ The red dots and counts for new messages and notifications take the color you pi
 Icons in the accent color	图标使用强调色
 Reel buttons in the accent color	Reels 按钮使用强调色
 The buttons beside a reel and their counts take the color you picked instead of white. Restart Instagram to see the change.	Reels 旁边的按钮和数字会改用你选择的颜色，不再是白色。请重新启动 Instagram 以查看变更.
+Text in the accent color	文字使用强调色
+Names, captions and other main text take the same color as the icons. Gray text stays gray. Restart Instagram to see the change.	名称、说明文字和其他主要文字会改用与图标相同的颜色。灰色文字保持灰色。请重新启动 Instagram 以查看变更.
+# context: Layout > Accent color switch. Saved is Instagram's own Saved page, in its label for this language.
+Filters in the accent color	筛选器使用强调色
+The filters along the top of Saved take the color you picked, and the one you're on is filled with it. Restart Instagram to see the change.	收藏夹顶部的筛选器会改用你选择的颜色，当前所在的筛选器会以该颜色填满。请重新启动 Instagram 以查看变更.
 Instagram's icons on the top bar, the tab bar and under posts take the color you picked. Text stays as it is. Restart Instagram to see the change.	顶部栏、标签栏和帖子下方的 Instagram 图标会改用你选择的颜色。文字保持不变。请重新启动 Instagram 以应用变更。
 Story rings in the accent color	快拍圆环使用强调色
 Story rings take the color you picked instead of Instagram's gradient. A few other gradients share those colors and change with them. Restart Instagram to see the change.	快拍圆环会改用你选择的颜色,取代 Instagram 的渐变。少数使用相同颜色的其他渐变也会一起改变。请重新启动 Instagram 以查看变更。
@@ -2584,6 +2589,10 @@ Tap sound volume	触摸音效音量
 Auto scroll in Home	首页自动卷动
 Moves Home on to the next post by itself. A video moves on when it ends, a photo or carousel after Time on each post. Touch the screen to hold it.	首页会自动移到下一条帖子。视频播完就移动，照片或轮播帖子则在“每条帖子的时间”后移动。触摸屏幕即可暂停。
 Time on each post	每条帖子的时间
+# context: Feed settings: switch that takes a blocked account's posts out of Home as soon as the block goes through (#861)
+Hide posts when you block someone	屏蔽某人时隐藏其帖子
+# context: Summary of Hide posts when you block someone, a Feed switch (#861)
+When you block someone, their posts in Home go away right away instead of after you refresh it.	屏蔽某人后，首页里此人的帖子会立即消失，不必先刷新.
 # context: Reels settings: switch that lets a tap on the reel shown above an open comments sheet pause or play it, and a hold play it at 2x, without closing the comments (#665)
 Control the reel above comments	控制评论上方的 Reel
 # context: Summary of Control the reel above comments (#665)
@@ -2665,6 +2674,10 @@ A feed video you hold for 2x keeps playing at 2x after you let go. Hold it again
 Only after a long hold	仅在长按较久后
 # context: Summary of Only after a long hold, a switch under Keep 2x after you let go (#552)
 Keeps 2x only when you hold the video for about 3 seconds. Let go sooner and it goes back to normal speed.	只有长按视频约 3 秒时才保持 2 倍速。提早放开就会恢复正常速度.
+# context: Feed settings: a switch under Keep 2x after you let go that leaves Instagram's 2x label on a feed video kept at 2x (#860)
+Show 2x after you let go	放开后显示 2 倍速
+# context: Summary of Show 2x after you let go, a switch under Keep 2x after you let go (#860)
+A feed video that keeps playing at 2x shows Instagram's 2x and time labels in place of the name until it goes back to normal speed.	持续以 2 倍速播放的动态视频会以 Instagram 的 2 倍速和时间标签取代名称，直到恢复正常速度.
 # context: Feed settings: a switch under Hold for 2x on feed videos that keeps the poster's name over the video while it's held at 2x (#552)
 Keep the name while you hold	按住时保留名称
 # context: Summary of Keep the name while you hold, a switch under Hold for 2x on feed videos (#552)
@@ -2732,6 +2745,10 @@ Hold a finger on the liquid pill's bubble, or slide it across the tabs, and the 
 # context: Keep story viewers, its Stories settings rows and the Story viewers page.
 Keep story viewers	保留快拍观看者
 Each time you open who viewed one of your stories, the list is kept on this phone and set beside your followers. Nothing extra is asked of Instagram. Turn it off and it stops at once.	每次你打开谁看过你的某条快拍，名单就会保留在这支手机上，并和你的粉丝放在一起对照。不会向 Instagram 多要任何东西。关闭后会立刻停止。
+# context: Stories > Keep story viewers, the switch for a search bar HushGram adds to Instagram's list of who viewed your story, and the bar's own words.
+Search bar in the viewer list	观看者名单中的搜索栏
+Puts a Search viewers bar at the top of the list of who viewed your story. It searches the viewers kept on this phone, the ones Instagram has listed so far.	在看过你快拍的名单顶部加上“搜索观看者”栏。它会搜索这支手机上保留的观看者，也就是 Instagram 目前已列出的人。
+Search viewers	搜索观看者
 Story viewers	快拍观看者
 Nothing here yet. With Keep story viewers on, open who viewed one of your stories in Instagram and the list is kept here.	这里还没有内容。开启“保留快拍观看者”后，在 Instagram 打开谁看过你的某条快拍，名单就会保留在这里。
 %1$d story kept since %2$s. Tap to see who viewed it and who has no view recorded.	自 %2$s 起保留了 %1$d 条快拍。点一下即可查看谁看过，以及谁没有记录到观看。

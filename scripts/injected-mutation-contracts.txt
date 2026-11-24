@@ -430,6 +430,11 @@ once-call Lapp/hushgram/extension/instagram/ads/Ads;->hide()Z in static (*)Z poo
 # since five other constructors write fields of those names. Left out, the comments sheet fetches
 # its ad again; twice or elsewhere, it isn't the flag Hide ads turned off.
 once-call Lapp/hushgram/extension/instagram/ads/Ads;->commentAds(I)I in instance (L*;L*;L*;L*;Lcom/instagram/search/common/analytics/SearchContext;Lcom/instagram/search/common/analytics/SearchContext;*)V holding LX/*;->A1G:Z LX/*;->A1g:Z
+# Hide ads (#857) answers the same constructor's writes of the two card types the bundle writer
+# puts under "ad_card_type" and "organic_card_type" (A0O and A0h on 457), so the shop or ad card
+# above the comments never opens. Left out, the card sits above the comments again; once, one of
+# the two still shows.
+once-call Lapp/hushgram/extension/instagram/ads/Ads;->commentCard(Ljava/lang/String;)Ljava/lang/String; in instance (L*;L*;L*;L*;Lcom/instagram/search/common/analytics/SearchContext;Lcom/instagram/search/common/analytics/SearchContext;*)V sites 2 holding LX/*;->A1G:Z LX/*;->A1g:Z
 # Remove build expired popup asks the extension first thing in the method that shows the "this
 # version has expired" lockout over the main activity. Two methods of its class hold
 # "lockout_active"; the lockout is the one taking the activity first.
@@ -2633,6 +2638,13 @@ once-call Lapp/hushgram/extension/instagram/feed/CommentAiLabel;->shown(I)Z in i
 # hook lands once, directly after the constructor, with the list, spec and row state still intact,
 # and that the icon's modifier leaves out every part of the two kinds Save's id is made in, which
 # cover Save's mount binder (the view-interaction tracker) and its selected state.
+# The same patch keeps the row's icons at their own size (#840): the bounds change of the class the
+# icon spec's glyph drawable extends (07f8.onBoundsChange on 457, whose one subclass is that
+# drawable, 04KJ) calls FeedDownloadButton.iconBounds first thing, with this, the bounds and an
+# instance-of answer, and hands the glyph what it returns. No rule, for the same reason: the class is
+# picked by the constructor the icon spec calls, and it holds no string. DownloadVideoHookTest checks
+# on every build the fixtures hold that the hook lands once, first, with those three registers, and
+# that the glyph's setBounds reads its answer.
 # Hide the Share button passes the same state's Share button flag and share count flag through
 # ShareButton.feedState the same way, with no rule for the same reason. Its Reels guard is first in
 # the check that decides whether a reel shows the Share button, and in no other method. 456 dropped
@@ -2774,6 +2786,20 @@ once-call Lapp/hushgram/extension/instagram/misc/AccentTheme;->reelButtons(Landr
 shared-call Lapp/hushgram/extension/instagram/misc/AccentTheme;->secondaryButtonFill(Landroid/content/Context;I)I in static (Landroid/content/Context;LX/*;)I holding const:0x7f06038d
 shared-call Lapp/hushgram/extension/instagram/misc/AccentTheme;->secondaryButtonFill(Landroid/content/Context;I)I in instance (Landroid/content/Context;LX/*;)I holding const:0x7f06038b
 shared-call Lapp/hushgram/extension/instagram/misc/AccentTheme;->secondaryButtonFill(Landroid/content/Context;I)I in instance (Landroid/content/Context;)Landroid/content/res/ColorStateList; holding const:0x7f06038b
+# Saved's filters along the top (All, Collections, Reels and the rest) are tabs made from
+# fixed_tabbar_button (0x7f0e0612 on 457) in one private ()V method (0LXK.A01 on 386314341), which
+# loads each tab's background (saved_tab_background) by id and gives it to the tab through a static
+# (Drawable, View, int) call. Accent color hands the background, the tab and the id to
+# AccentTheme.savedFilter between the load and that call. FixedTabBar.setTabs loads the same layout
+# but takes (List), so the shape leaves it out. The method loads no string, so the rule names the
+# layout's number, which moves every update. Left out, Filters in the accent color leaves Saved's
+# filters gray (#187). PillsTest checks every build.
+once-call Lapp/hushgram/extension/instagram/misc/AccentTheme;->savedFilter(Landroid/graphics/drawable/Drawable;Landroid/view/View;I)Landroid/graphics/drawable/Drawable; in instance ()V holding const:0x7f0e0612
+# The Search tab's top bar keeps the Saved bookmark it inflates in a field, in its one method loading
+# the bookmark stub's id (the one SavedHome.hideExploreSaved is asked in). Accent color hands the
+# bookmark to AccentTheme.searchSaved right after the store. Left out, the bookmark stays white with
+# Icons in the accent color on (#187). BarIconsTest checks every build.
+once-call Lapp/hushgram/extension/instagram/misc/AccentTheme;->searchSaved(Landroid/widget/ImageView;)V in instance (Landroidx/fragment/app/Fragment;Landroidx/fragment/app/FragmentActivity;Lcom/instagram/common/session/UserSession;LX/*;LX/*;LX/*;Z)V holding const:0x7f0b166a
 # An opened chat paints the view behind its messages (id/thread_background_view_container) in one
 # method (04v3.A0D on 456's 386214574), which stacks its own layers over the chat theme's color and
 # hands the LayerDrawable to a static call taking a drawable, a view and an int. Accent color hands the
@@ -4346,6 +4372,22 @@ once-call Lapp/hushgram/extension/instagram/feed/FeedHoldSpeed;->lifted(Ljava/ut
 # hands it the resting state instead (#552). Left out, the name over the video still goes away while
 # it's held; twice or elsewhere, it isn't the hook the patch wrote.
 once-call Lapp/hushgram/extension/instagram/feed/FeedHoldSpeed;->keepsLook()Z in instance (Landroid/view/View;Lcom/instagram/feed/media/Media;L*;L*;L*;)V class-holding FeedMediaTapHandlerV2-softError
+# Show 2x after you let go: a lift FeedHoldSpeed.lifted keeps at 2x asks FeedHoldSpeed.showsKept before
+# it puts the post's look to rest, whose yes hands the post the hold state the press entry hands it
+# instead (#860). Left out, a kept video never shows Instagram's 2x label; twice or elsewhere, it isn't
+# the hook the patch wrote.
+once-call Lapp/hushgram/extension/instagram/feed/FeedHoldSpeed;->showsKept()Z in instance (Lcom/instagram/feed/media/Media;L*;L*;Z)V class-holding FeedMediaTapHandlerV2-softError
+# Hide posts when you block someone (#861): Home's list tells BlockedPosts.feed about itself in its
+# constructor, the one method tracing MainFeedAdapter:init, right after its superclass's constructor.
+# The block request's callback tells BlockedPosts.blocked the account first thing in the method taking
+# the server's answer, the one (Object)V method that stores the account's new friendship and updates
+# the user cache. Left out, a block leaves the account's posts in Home; twice or elsewhere, it isn't
+# the hook the patch wrote. It's the one such method reading the account back as a User through a
+# static (object, object, flag) call: on the armeabi-v7a build (386314340) Redex merged a business
+# profile's callbacks into one switch method (LX/0C0F;->A0F) holding the same two calls without it.
+once-call Lapp/hushgram/extension/instagram/feed/BlockedPosts;->feed(Ljava/lang/Object;)V in instance (*)V pooled holding MainFeedAdapter:init
+start-call Lapp/hushgram/extension/instagram/feed/BlockedPosts;->blocked(Ljava/lang/Object;)V in instance (Ljava/lang/Object;)V calling static LX/*;->*(LX/*;LX/*;Z)Lcom/instagram/user/model/User; holding LX/*;->*(LX/*;Lcom/instagram/user/model/User;Ljava/lang/String;)V LX/*;->*(Lcom/instagram/common/session/UserSession;Lcom/instagram/user/model/User;)V
+once-call Lapp/hushgram/extension/instagram/feed/BlockedPosts;->blocked(Ljava/lang/Object;)V in instance (Ljava/lang/Object;)V calling static LX/*;->*(LX/*;LX/*;Z)Lcom/instagram/user/model/User; holding LX/*;->*(LX/*;Lcom/instagram/user/model/User;Ljava/lang/String;)V LX/*;->*(Lcom/instagram/common/session/UserSession;Lcom/instagram/user/model/User;)V
 # On 451 a tap can reach Reels without the handler (the video's overlays, a server-sent tap), and
 # every way in ends in the feed's one Reels launcher, the instance (View, entry point, two objects,
 # Media, state, List, boolean, boolean) void method holding the contextual feed's profile argument
@@ -4529,6 +4571,13 @@ once-call Lapp/hushgram/extension/instagram/direct/OnlineHistory;->received(Ljav
 # answer every page of viewers comes back in.
 start-call Lapp/hushgram/extension/instagram/stories/StoryViewers;->listed(Ljava/lang/Object;Ljava/lang/Object;)V in instance (Ljava/lang/Object;)V pooled holding fetched_ig_viewers_count total_viewer_count
 once-call Lapp/hushgram/extension/instagram/stories/StoryViewers;->listed(Ljava/lang/Object;Ljava/lang/Object;)V in instance (Ljava/lang/Object;)V pooled holding fetched_ig_viewers_count total_viewer_count
+# A story's viewer list makes each row in a class whose (int, ViewGroup)View maker loads the row's
+# layout (story_viewers_list_interaction_row, 0x7f0e1618 on 457; 0YXO.createView on 386314341), and
+# binds it in that class's one (int, View, Object, Object)V bindView. Keep story viewers hands the
+# row's view to StoryViewerSearch.row first thing there, which puts the Search viewers bar on the
+# row's list. Left out, the list gets no bar with Search bar in the viewer list on (#833).
+# ViewerSearchBarTest checks every build.
+start-call Lapp/hushgram/extension/instagram/settings/StoryViewerSearch;->row(Landroid/view/View;)V in instance (ILandroid/view/View;Ljava/lang/Object;Ljava/lang/Object;)V class-holding const:0x7f0e1618
 # Don't send feed view history (#664). The two static methods that add feed_view_info to a Home request
 # (feed/timeline/), one taking the context, two objects and the session and the other the context, one
 # object and the session (03aR.A01 and 0Ago.A00 on 455), each hand the record they read for it to

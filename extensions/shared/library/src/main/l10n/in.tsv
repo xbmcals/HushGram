@@ -978,6 +978,11 @@ The red dots and counts for new messages and notifications take the color you pi
 Icons in the accent color	Ikon dengan warna aksen
 Reel buttons in the accent color	Tombol reel dengan warna aksen
 The buttons beside a reel and their counts take the color you picked instead of white. Restart Instagram to see the change.	Tombol di samping reel dan angkanya memakai warna yang kamu pilih, bukan putih. Mulai ulang Instagram untuk melihat perubahannya.
+Text in the accent color	Teks dengan warna aksen
+Names, captions and other main text take the same color as the icons. Gray text stays gray. Restart Instagram to see the change.	Nama, keterangan, dan teks utama lainnya memakai warna yang sama dengan ikon. Teks abu-abu tetap abu-abu. Mulai ulang Instagram untuk melihat perubahannya.
+# context: Layout > Accent color switch. Saved is Instagram's own Saved page, in its label for this language.
+Filters in the accent color	Filter dengan warna aksen
+The filters along the top of Saved take the color you picked, and the one you're on is filled with it. Restart Instagram to see the change.	Filter di bagian atas Tersimpan memakai warna yang kamu pilih, dan filter yang sedang dipakai diisi dengan warna itu. Mulai ulang Instagram untuk melihat perubahannya.
 Instagram's icons on the top bar, the tab bar and under posts take the color you picked. Text stays as it is. Restart Instagram to see the change.	Ikon Instagram di bilah atas, bilah tab, dan di bawah postingan memakai warna yang kamu pilih. Teks tetap seperti semula. Mulai ulang Instagram untuk melihat perubahannya.
 Story rings in the accent color	Lingkaran story dengan warna aksen
 Story rings take the color you picked instead of Instagram's gradient. A few other gradients share those colors and change with them. Restart Instagram to see the change.	Lingkaran story memakai warna yang kamu pilih, bukan gradien Instagram. Beberapa gradien lain memakai warna yang sama dan ikut berubah. Mulai ulang Instagram untuk melihat perubahannya.
@@ -2581,6 +2586,10 @@ Tap sound volume	Volume suara ketuk
 Auto scroll in Home	Gulir otomatis di Beranda
 Moves Home on to the next post by itself. A video moves on when it ends, a photo or carousel after Time on each post. Touch the screen to hold it.	Beranda pindah sendiri ke postingan berikutnya. Video pindah saat selesai, foto atau carousel setelah Waktu di tiap postingan. Sentuh layar untuk menahannya.
 Time on each post	Waktu di tiap postingan
+# context: Feed settings: switch that takes a blocked account's posts out of Home as soon as the block goes through (#861)
+Hide posts when you block someone	Sembunyikan postingan saat memblokir seseorang
+# context: Summary of Hide posts when you block someone, a Feed switch (#861)
+When you block someone, their posts in Home go away right away instead of after you refresh it.	Saat kamu memblokir seseorang, postingannya di Beranda langsung hilang tanpa perlu menyegarkan dulu.
 # context: Reels settings: switch that lets a tap on the reel shown above an open comments sheet pause or play it, and a hold play it at 2x, without closing the comments (#665)
 Control the reel above comments	Kontrol reel di atas komentar
 # context: Summary of Control the reel above comments (#665)
@@ -2662,6 +2671,10 @@ A feed video you hold for 2x keeps playing at 2x after you let go. Hold it again
 Only after a long hold	Hanya setelah tahan lama
 # context: Summary of Only after a long hold, a switch under Keep 2x after you let go (#552)
 Keeps 2x only when you hold the video for about 3 seconds. Let go sooner and it goes back to normal speed.	Tetap 2x hanya jika kamu menahan video sekitar 3 detik. Lepas lebih cepat dan kecepatan kembali normal.
+# context: Feed settings: a switch under Keep 2x after you let go that leaves Instagram's 2x label on a feed video kept at 2x (#860)
+Show 2x after you let go	Tampilkan 2x setelah dilepas
+# context: Summary of Show 2x after you let go, a switch under Keep 2x after you let go (#860)
+A feed video that keeps playing at 2x shows Instagram's 2x and time labels in place of the name until it goes back to normal speed.	Video feed yang tetap diputar 2x menampilkan label 2x dan waktu dari Instagram sebagai ganti nama sampai kecepatannya kembali normal.
 # context: Feed settings: a switch under Hold for 2x on feed videos that keeps the poster's name over the video while it's held at 2x (#552)
 Keep the name while you hold	Tetap tampilkan nama saat menahan
 # context: Summary of Keep the name while you hold, a switch under Hold for 2x on feed videos (#552)
@@ -2729,6 +2742,10 @@ Hold a finger on the liquid pill's bubble, or slide it across the tabs, and the 
 # context: Keep story viewers, its Stories settings rows and the Story viewers page.
 Keep story viewers	Simpan penonton cerita
 Each time you open who viewed one of your stories, the list is kept on this phone and set beside your followers. Nothing extra is asked of Instagram. Turn it off and it stops at once.	Setiap kali kamu membuka siapa yang melihat salah satu ceritamu, daftarnya disimpan di ponsel ini dan disandingkan dengan pengikutmu. Tidak ada permintaan tambahan ke Instagram. Matikan dan langsung berhenti.
+# context: Stories > Keep story viewers, the switch for a search bar HushGram adds to Instagram's list of who viewed your story, and the bar's own words.
+Search bar in the viewer list	Bilah pencarian di daftar penonton
+Puts a Search viewers bar at the top of the list of who viewed your story. It searches the viewers kept on this phone, the ones Instagram has listed so far.	Menaruh bilah Cari penonton di bagian atas daftar orang yang melihat ceritamu. Bilah ini mencari di penonton yang tersimpan di ponsel ini, yaitu yang sudah ditampilkan Instagram sejauh ini.
+Search viewers	Cari penonton
 Story viewers	Penonton cerita
 Nothing here yet. With Keep story viewers on, open who viewed one of your stories in Instagram and the list is kept here.	Belum ada apa-apa. Dengan Simpan penonton cerita aktif, buka siapa yang melihat salah satu ceritamu di Instagram dan daftarnya disimpan di sini.
 %1$d story kept since %2$s. Tap to see who viewed it and who has no view recorded.	%1$d cerita disimpan sejak %2$s. Ketuk untuk melihat siapa yang melihatnya dan siapa yang belum tercatat melihat.

@@ -101,6 +101,7 @@ A double tap on a post or reel no longer likes it or shows a heart. A single tap
 A double tap on a reel doesn't like it. Turn this off to keep double tap to like on reels.	النقر المزدوج على reel لا يُعجبه. أوقف هذا للإبقاء على النقر المزدوج للإعجاب بـ Reels.
 A double tap on the left side of a reel goes back, and on the right side it goes ahead, as far as Skip length says. A double tap in the middle still likes it. Reels no longer than that don't skip.	النقر المزدوج على يسار reel يرجع، وعلى يمينه يتقدم، بقدر ما يحدده طول التخطي. والنقر المزدوج في الوسط لا يزال يُعجبه. لا يتم تخطي Reels التي لا تزيد مدتها على ذلك.
 A fainter bar and handle, so more of the video shows through.	شريط ومقبض أخفّ، ليظهر المزيد من الفيديو.
+A feed video that keeps playing at 2x shows Instagram's 2x and time labels in place of the name until it goes back to normal speed.	يعرض فيديو المتابَعات الذي يستمر بسرعة 2x علامتي 2x والوقت من Instagram بدلاً من الاسم حتى يعود إلى السرعة العادية.
 A feed video you hold for 2x keeps playing at 2x after you let go. Hold it again to go back to normal speed.	فيديو في آخر الأخبار تضغط عليه مطوّلًا للسرعة 2x يواصل التشغيل بسرعة 2x بعد أن ترفع إصبعك. اضغط مطوّلًا مرة أخرى للعودة إلى السرعة العادية.
 A file named %1$s in %2$s paused HushGram.	ملف باسم %1$s في %2$s أوقف HushGram.
 A finished story stays on screen until you tap or swipe. Turn this off for Instagram's timing.	القصة المنتهية تبقى على الشاشة حتى تنقر أو تسحب. أوقف هذا لتوقيت Instagram.
@@ -142,6 +143,7 @@ A swipe right on Home opens %1$s. The + button still opens the camera.	السح�
 A swipe up on someone's story no longer opens the reply box and its reactions. Tap Send message to reply.	لم يعد السحب لأعلى في قصة شخص يفتح مربع الرد وتفاعلاته. اضغط إرسال رسالة للرد.
 A tap on a feed video, or on the screen it shows when it ends, no longer opens it full screen in Reels. Tap a feed video to pause it still pauses it, and the buttons on that screen still work.	لم تعد النقرة على فيديو في العرض، أو على الشاشة التي تظهر عند انتهائه، تفتحه بملء الشاشة في Reels. النقر على فيديو في العرض لإيقافه ما زال يوقفه، والأزرار في تلك الشاشة ما زالت تعمل.
 # context: Feed settings: a switch under Tap a feed video to pause it that pauses only for a tap in the middle of the video (#706)
+Hide posts when you block someone	إخفاء المنشورات عند حظر شخص
 Only the middle pauses it	المنتصف فقط يوقفه مؤقتًا
 # context: Summary of Only the middle pauses it; Taps on feed videos stay in the feed is another switch, use its translation (#706)
 Only a tap in the middle of the video, where Instagram puts its play button, pauses or plays it. A tap anywhere else opens it in Reels, unless Taps on feed videos stay in the feed is on.	فقط النقر في منتصف الفيديو، حيث يضع Instagram زر التشغيل، يوقفه مؤقتًا أو يشغّله. أي نقرة في مكان آخر تفتحه في Reels، إلا إذا كان خيار النقر على فيديوهات الخلاصة يبقى داخل الخلاصة مفعّلًا.
@@ -252,6 +254,8 @@ In any Followers or Following list, hold a tab at the top to show everyone, only
 # context: settings switch title on the Profiles page (#847): dates on your own Followers and Following lists
 Follow dates in your lists	تواريخ المتابعة في قوائمك
 # context: that switch's summary (#847)
+Show 2x after you let go	إظهار 2x بعد الإفلات
+When you block someone, their posts in Home go away right away instead of after you refresh it.	عندما تحظر شخصاً، تختفي منشوراته في الصفحة الرئيسية فوراً بدلاً من بعد التحديث.
 Your own Followers and Following lists show since when each account follows you, or you them. Dates start the first time you scroll a list to the end with this on, so accounts already there get none.	تعرض قائمتا المتابِعين والمتابَعين الخاصتان بك منذ متى يتابعك كل حساب، أو تتابعه أنت. تبدأ التواريخ من أول مرة تمرر فيها قائمة حتى نهايتها مع تشغيل هذا الخيار، لذا لا تحصل الحسابات الموجودة مسبقًا على تاريخ.
 # context: a choice in the follow list filter dialog (#847): only public accounts
 Public accounts	الحسابات العامة
@@ -585,6 +589,10 @@ Drop quality to keep playing	خفض الجودة لمتابعة التشغيل
 Dusk blue	أزرق الغسق
 Each save goes into a folder named for the account that posted it, inside the save folder. A save that doesn't know who posted stays in the save folder.	يذهب كل حفظ إلى مجلد مسمى باسم الحساب الذي نشره، داخل مجلد الحفظ. والحفظ الذي لا يعرف من نشره يبقى في مجلد الحفظ.
 Each time you open who viewed one of your stories, the list is kept on this phone and set beside your followers. Nothing extra is asked of Instagram. Turn it off and it stops at once.	في كل مرة تفتح قائمة من شاهدوا إحدى قصصك، تُحفظ القائمة على هذا الهاتف وتُعرض بجانب متابعيك. لا يُطلب شيء إضافي من Instagram. أطفئه فيتوقف فورًا.
+# context: Stories > Keep story viewers, the switch for a search bar HushGram adds to Instagram's list of who viewed your story, and the bar's own words.
+Search bar in the viewer list	شريط بحث في قائمة المشاهدين
+Puts a Search viewers bar at the top of the list of who viewed your story. It searches the viewers kept on this phone, the ones Instagram has listed so far.	يضع شريط «ابحث في المشاهدين» أعلى قائمة من شاهد قصتك. يبحث في المشاهدين المحفوظين على هذا الهاتف، أي الذين أدرجهم Instagram حتى الآن.
+Search viewers	ابحث في المشاهدين
 Each time you scroll your own Followers list to the end, compares it with the last time and lists who's gone. Nothing extra is asked of Instagram, and the list stays on your phone.	في كل مرة تصل بنهاية قائمة متابعيك، تُقارن بآخر مرة وتُسرد من غادر. لا يُطلب شيء إضافي من Instagram، وتبقى القائمة على هاتفك.
 Each video saves at %1$s or the closest quality below it. A video with nothing that low saves at the closest quality above.	يُحفظ كل فيديو بدقة %1$s أو بأقرب جودة أقل منها. وإذا لم تتوفر جودة بهذا الانخفاض، يُحفظ بأقرب جودة أعلى.
 Each video saves at its lowest quality, for the smallest file.	يُحفظ كل فيديو بأدنى جودة له، لأصغر ملف.
@@ -987,6 +995,11 @@ HushGram turns back on when Instagram restarts.	يعود HushGram للعمل ع�
 Icons in the accent color	أيقونات بلون التمييز
 Reel buttons in the accent color	أزرار Reels بلون التمييز
 The buttons beside a reel and their counts take the color you picked instead of white. Restart Instagram to see the change.	تأخذ الأزرار بجانب Reel وأعدادها اللون الذي اخترته بدلاً من الأبيض. أعد تشغيل Instagram لرؤية التغيير.
+Text in the accent color	النص بلون التمييز
+Names, captions and other main text take the same color as the icons. Gray text stays gray. Restart Instagram to see the change.	تأخذ الأسماء والتعليقات والنصوص الرئيسية الأخرى لون الأيقونات نفسه. يبقى النص الرمادي رماديًا. أعد تشغيل Instagram لرؤية التغيير.
+# context: Layout > Accent color switch. Saved is Instagram's own Saved page, in its label for this language.
+Filters in the accent color	عوامل التصفية بلون التمييز
+The filters along the top of Saved take the color you picked, and the one you're on is filled with it. Restart Instagram to see the change.	تأخذ عوامل التصفية أعلى المحفوظات اللون الذي اخترته، ويُملأ به العامل الذي تستخدمه. أعد تشغيل Instagram لرؤية التغيير.
 Import HushGram settings	استيراد إعدادات HushGram
 Imported %1$d settings.	تم استيراد %1$d إعدادات.
 Imported %1$d settings. Skipped %2$d that this version doesn't know.	تم استيراد %1$d إعدادات. تم تخطي %2$d لا تعرفها هذه النسخة.

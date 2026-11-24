@@ -25,6 +25,9 @@ Every HushGram release, newest first.
 * With `Watch again in the feed` on, Watch again replays a reel right there in Saved and other lists of posts too. It opened the reel in another viewer there. Reported in #568.
 * `Hide the More button on reels` is new under Reels. It takes the three dots off the bottom of the buttons beside a reel. Starts off. Asked for in #647.
 * `Reel buttons in the accent color` is new under `Accent color` in Layout. The like, comment, share and other buttons beside a reel, and their counts, take your accent color instead of white. Starts off. Asked for in #187.
+* With `Icons in the accent color` on, the icons atop a screen, a profile's Posts, Reels, Reposts and Tagged tabs, the Saved page's buttons and the Saved bookmark on Search take your accent color too. Asked for in #187.
+* `Filters in the accent color` and `Text in the accent color` are new under `Accent color` in Layout. Saved's filters along the top, and names, captions and other main text, take your accent color. Both start off. Asked for in #187.
+* `Search bar in the viewer list` is new under `Keep story viewers` in Stories. The list of who viewed your story gets a Search viewers bar again, searching the viewers kept on your phone. Starts off. Asked for in #833.
 * `Chat groups` is new under Messages. Long press a chat to file it in a group you name, off your main inbox. Long press the Messages button to show one group. Starts off. Asked for in discussion #838.
 * With `Swipe through a chat's reels` on, the reply bar and quick reactions keep working on reels you swipe to past the chat's loaded messages. They went dead there, so nothing went out. Reported in #804 and #844.
 * `Story rings on saved posts` is new under Stories. Posts you saved show the story ring around the author's picture, and tapping it opens their story, like on Home. Starts off. Asked for in #790.
@@ -50,6 +53,12 @@ Every HushGram release, newest first.
 * `Show it as an icon at the top`, new under `Show if a profile follows you`, puts a green check or red cross by the menu, or on HushGram's button when the bar's full. Starts off. Asked for in #842.
 * `Hold the middle to pause it`, new under `Hold for 2x on feed videos`, pauses a feed video while you hold its middle and plays it as you let go. Either side plays 2x. Starts off. Asked for in #639.
 * `Only the middle pauses it` is new under `Tap a feed video to pause it` in Feed. A tap off the video's middle opens Reels instead of pausing. Starts off. Asked for in #706.
+* `Hide ads` now also takes the shop or ad card off the top of a reel's comments. Reported in #857.
+* `Show 2x after you let go` is new under `Keep 2x after you let go` in Feed. A feed video kept at 2x keeps Instagram's 2x and time labels on until it's back to normal speed. Starts off. Asked for in #860.
+* Download on a photo post with a song in Home now asks `Download as video` or `Download as photo`, as reels do. That goes for the post's menu, a hold and `Download button on feed posts`. Asked for in #71.
+* `Hide posts when you block someone` is new at the end of Feed. Block someone and their posts leave Home right away, without a refresh. Starts off. Asked for in #861.
+* With `Download button on feed posts` on, a post's Share and Save icons no longer stretch to fill their space now and then. Every icon in the row keeps its own size. Reported in #840.
+* In Morphe Manager, `Full resolution photos` now sits under Downloads, so the Feed group stays short. Its switches are still on the Feed settings page.
 
 ## 0.0.22 (2026-11-22)
 

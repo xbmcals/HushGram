@@ -1664,6 +1664,11 @@ The red dots and counts for new messages and notifications take the color you pi
 Icons in the accent color	圖示使用強調色
 Reel buttons in the accent color	Reels 按鈕使用強調色
 The buttons beside a reel and their counts take the color you picked instead of white. Restart Instagram to see the change.	Reels 旁邊的按鈕和數字會改用你選擇的顏色，不再是白色。請重新啟動 Instagram 以查看變更。
+Text in the accent color	文字使用強調色
+Names, captions and other main text take the same color as the icons. Gray text stays gray. Restart Instagram to see the change.	名稱、說明文字和其他主要文字會改用與圖示相同的顏色。灰色文字維持灰色。請重新啟動 Instagram 以查看變更。
+# context: Layout > Accent color switch. Saved is Instagram's own Saved page, in its label for this language.
+Filters in the accent color	篩選器使用強調色
+The filters along the top of Saved take the color you picked, and the one you're on is filled with it. Restart Instagram to see the change.	我的珍藏頂端的篩選器會改用你選擇的顏色，目前所在的篩選器會以該顏色填滿。請重新啟動 Instagram 以查看變更。
 Instagram's icons on the top bar, the tab bar and under posts take the color you picked. Text stays as it is. Restart Instagram to see the change.	頂部列、分頁列和貼文下方的 Instagram 圖示會改用你選擇的顏色。文字保持不變。請重新啟動 Instagram 以套用變更。
 Story rings in the accent color	限時動態圓環使用強調色
 Story rings take the color you picked instead of Instagram's gradient. A few other gradients share those colors and change with them. Restart Instagram to see the change.	限時動態圓環會改用你選擇的顏色,取代 Instagram 的漸層。少數使用相同顏色的其他漸層也會一起改變。請重新啟動 Instagram 以查看變更。
@@ -2584,6 +2589,10 @@ Tap sound volume	觸控音效音量
 Auto scroll in Home	首頁自動捲動
 Moves Home on to the next post by itself. A video moves on when it ends, a photo or carousel after Time on each post. Touch the screen to hold it.	首頁會自動移到下一則貼文。影片播完就移動，相片或輪播貼文則在「每則貼文的時間」後移動。觸碰螢幕即可暫停。
 Time on each post	每則貼文的時間
+# context: Feed settings: switch that takes a blocked account's posts out of Home as soon as the block goes through (#861)
+Hide posts when you block someone	封鎖某人時隱藏其貼文
+# context: Summary of Hide posts when you block someone, a Feed switch (#861)
+When you block someone, their posts in Home go away right away instead of after you refresh it.	封鎖某人後，首頁裡此人的貼文會立即消失，不必先重新整理.
 # context: Reels settings: switch that lets a tap on the reel shown above an open comments sheet pause or play it, and a hold play it at 2x, without closing the comments (#665)
 Control the reel above comments	控制留言上方的 Reel
 # context: Summary of Control the reel above comments (#665)
@@ -2665,6 +2674,10 @@ A feed video you hold for 2x keeps playing at 2x after you let go. Hold it again
 Only after a long hold	僅在長按較久後
 # context: Summary of Only after a long hold, a switch under Keep 2x after you let go (#552)
 Keeps 2x only when you hold the video for about 3 seconds. Let go sooner and it goes back to normal speed.	只有長按影片約 3 秒時才維持 2 倍速。提早放開就會恢復正常速度.
+# context: Feed settings: a switch under Keep 2x after you let go that leaves Instagram's 2x label on a feed video kept at 2x (#860)
+Show 2x after you let go	放開後顯示 2 倍速
+# context: Summary of Show 2x after you let go, a switch under Keep 2x after you let go (#860)
+A feed video that keeps playing at 2x shows Instagram's 2x and time labels in place of the name until it goes back to normal speed.	持續以 2 倍速播放的動態影片會以 Instagram 的 2 倍速和時間標籤取代名稱，直到恢復正常速度.
 # context: Feed settings: a switch under Hold for 2x on feed videos that keeps the poster's name over the video while it's held at 2x (#552)
 Keep the name while you hold	按住時保留名稱
 # context: Summary of Keep the name while you hold, a switch under Hold for 2x on feed videos (#552)
@@ -2732,6 +2745,10 @@ Hold a finger on the liquid pill's bubble, or slide it across the tabs, and the 
 # context: Keep story viewers, its Stories settings rows and the Story viewers page.
 Keep story viewers	保留限時動態觀看者
 Each time you open who viewed one of your stories, the list is kept on this phone and set beside your followers. Nothing extra is asked of Instagram. Turn it off and it stops at once.	每次你打開誰看過你的某則限時動態，名單就會保留在這支手機上，並和你的粉絲放在一起對照。不會向 Instagram 多要任何東西。關閉後會立刻停止。
+# context: Stories > Keep story viewers, the switch for a search bar HushGram adds to Instagram's list of who viewed your story, and the bar's own words.
+Search bar in the viewer list	觀看者名單中的搜尋列
+Puts a Search viewers bar at the top of the list of who viewed your story. It searches the viewers kept on this phone, the ones Instagram has listed so far.	在看過你限時動態的名單頂端加上「搜尋觀看者」列。它會搜尋這支手機上保留的觀看者，也就是 Instagram 目前已列出的人。
+Search viewers	搜尋觀看者
 Story viewers	限時動態觀看者
 Nothing here yet. With Keep story viewers on, open who viewed one of your stories in Instagram and the list is kept here.	這裡還沒有東西。開啟「保留限時動態觀看者」後，在 Instagram 打開誰看過你的某則限時動態，名單就會保留在這裡。
 %1$d story kept since %2$s. Tap to see who viewed it and who has no view recorded.	自 %2$s 起保留了 %1$d 則限時動態。點一下即可查看誰看過，以及誰沒有記錄到觀看。
