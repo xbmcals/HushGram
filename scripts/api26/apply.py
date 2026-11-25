@@ -353,11 +353,43 @@ def ensure_lint_config():
             warn(f"could not add ObsoleteSdkInt to {target.relative_to(ROOT)}")
 
 
+
+ATTR_RE = re.compile(r'(minSdkVersion"\s*,\s*")(\d+)(")')
+TYPED_RE = re.compile(r'(?i)(\bmin_?sdk\w*\s*:\s*Int\s*=\s*)(\d+)')
+
+
+def lower_patch_floor():
+    """Lower the Android floor that the patches themselves declare (not the Gradle minSdk): numeric
+    minSdk constants and `setAttribute("android:minSdkVersion", "28")`-style manifest edits in the
+    patch sources. Morphe Manager refuses a device below what the bundle declares."""
+    for kt in sorted((ROOT / "patches").glob("**/*.kt")) + sorted((ROOT / "patches").glob("**/*.kts")):
+        parts = kt.relative_to(ROOT).parts
+        if any(p in SKIP_BUILD_DIRS for p in parts) or "test" in parts or "androidTest" in parts:
+            continue
+        try:
+            text = kt.read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError):
+            continue
+
+        def lower(m):
+            return m.group(1) + str(MIN_SDK) if int(m.group(2)) > MIN_SDK else m.group(0)
+
+        new = MINSDK_RE.sub(lower, text)
+        new = TYPED_RE.sub(lower, new)
+        new = ATTR_RE.sub(lambda m: m.group(1) + str(MIN_SDK) + m.group(3) if int(m.group(2)) > MIN_SDK else m.group(0), new)
+        if new != text:
+            kt.write_text(new, encoding="utf-8")
+            print(f"patch floor lowered to {MIN_SDK} in {kt.relative_to(ROOT)}")
+
+
 def main():
     if not (ROOT / "extensions").is_dir():
         sys.exit(f"No extensions/ directory under {ROOT}")
 
     ensure_lint_config()
+
+    if os.environ.get("LOWER_PATCH_FLOOR", "on").lower() == "on":
+        lower_patch_floor()
 
     # Opt-in: the lint fix no longer depends on it, and it edits build configuration.
     if os.environ.get("FORCE_MIN_SDK", "off").lower() == "on":
