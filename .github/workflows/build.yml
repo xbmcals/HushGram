@@ -13,6 +13,9 @@ on:
         type: choice
         options: ['off', 'on']
         default: 'off'
+  push:
+    branches: [main]
+    paths-ignore: ['**.md']
 
 jobs:
   build:
@@ -51,6 +54,26 @@ jobs:
 
       - name: Make gradlew executable
         run: chmod +x ./gradlew
+
+      # Shows every place the Android floor is set, on the run's Summary page.
+      - name: Where is the Android floor set?
+        run: |
+          {
+            echo '### minSdk / Android floor in the sources (after apply.py)'
+            echo '```'
+            grep -rInE -i 'min_?sdk|minSdkVersion|uses-sdk|android:minSdk' \
+              --include='*.kt' --include='*.kts' --include='*.gradle' --include='*.toml' \
+              --include='*.properties' --include='*.xml' . 2>/dev/null \
+              | grep -v '/build/' | grep -v '^./.git/' | head -150 || true
+            echo '```'
+            f=$(find patches -name AppCompatibilities.kt -not -path '*/build/*' | head -1)
+            if [ -n "$f" ]; then
+              echo "### $f"
+              echo '```kotlin'
+              sed -n 1,150p "$f"
+              echo '```'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
 
       # Unit tests are not run: RuntimeFloorTest compares against
       # upstream's expected minSdk floor.
