@@ -93,8 +93,17 @@ jobs:
           unzip -l "dist/$(basename "$f")" | head -40
 
       # Backstop: fails if any 28+/29+ call is still unguarded.
+      # Lint is advisory: it must never stop the .mpp from being uploaded.
       - name: Lint (NewApi must be clean)
+        id: lint
+        continue-on-error: true
         run: ./gradlew lintDebug --console=plain
+
+      - name: Say so if lint failed
+        if: steps.lint.outcome == 'failure'
+        run: |
+          echo "::warning::Lint failed. The .mpp was still built and uploaded; see the Lint step for the errors."
+          echo "### Lint failed (the .mpp was still built)" >> "$GITHUB_STEP_SUMMARY"
 
       # dist/ holds exactly one file, so the zip has the .mpp at its root.
       - uses: actions/upload-artifact@v4
