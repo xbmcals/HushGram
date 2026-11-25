@@ -299,9 +299,65 @@ def add_newapi_suppression(src):
     return before + '@android.annotation.SuppressLint("NewApi")\n' + src[m.start():]
 
 
+
+LINT_ISSUE = '<issue id="ObsoleteSdkInt" severity="ignore" />'
+_OBSOLETE_ISSUE_RE = re.compile(r'[ \t]*<issue\s+id="ObsoleteSdkInt"[^>]*?(?:/>|>.*?</issue>)[ \t]*\n?', re.S)
+
+
+def _write_lint_xml(path):
+    """Make lint ignore ObsoleteSdkInt (redundant version checks) in this lint config."""
+    if not path.exists():
+        path.write_text('<?xml version="1.0" encoding="UTF-8"?>\n<lint>\n'
+                        '    <!-- Added by scripts/api26/apply.py: upstream keeps version checks that are '
+                        'redundant at its minSdk. -->\n'
+                        f'    {LINT_ISSUE}\n</lint>\n', encoding="utf-8")
+        return True
+    text = path.read_text(encoding="utf-8")
+    if 'id="ObsoleteSdkInt" severity="ignore"' in text:
+        return True
+    text = _OBSOLETE_ISSUE_RE.sub("", text)
+    if "</lint>" not in text:
+        return False
+    path.write_text(text.replace("</lint>", f"    {LINT_ISSUE}\n</lint>", 1), encoding="utf-8")
+    return True
+
+
+def ensure_lint_config():
+    """ObsoleteSdkInt flags upstream's own `SDK_INT >= O` style checks. It says nothing about whether
+    the app runs, so switch it off in every Android module instead of editing upstream's code."""
+    for build in sorted(ROOT.glob("extensions/**/build.gradle*")):
+        if any(part in SKIP_BUILD_DIRS for part in build.relative_to(ROOT).parts):
+            continue
+        module = build.parent
+        if not (module / "src/main/AndroidManifest.xml").exists():
+            continue
+        text = build.read_text(encoding="utf-8")
+        # A DSL that promotes the issue to an error would override lint.xml.
+        fixed = re.sub(r'\b(?:error|fatal|warning|informational|enable)(\s*\+=\s*)("ObsoleteSdkInt")',
+                       r"disable\1\2", text)
+        fixed = re.sub(r"\b(?:error|fatal|warning|informational|enable)(\s+)(['\"]ObsoleteSdkInt['\"])",
+                       r"disable\1\2", fixed)
+        if fixed != text:
+            build.write_text(fixed, encoding="utf-8")
+            print(f"lint: ObsoleteSdkInt moved to disable in {build.relative_to(ROOT)}")
+        target = module / "lint.xml"
+        m = re.search(r'lintConfig\s*=\s*(?:rootProject\.|project\.)?file\(\s*"([^"]+)"\s*\)', text)
+        if m:
+            for cand in (module / m.group(1), ROOT / m.group(1)):
+                if cand.exists():
+                    target = cand
+                    break
+        if _write_lint_xml(target):
+            print(f"lint: ObsoleteSdkInt ignored via {target.relative_to(ROOT)}")
+        else:
+            warn(f"could not add ObsoleteSdkInt to {target.relative_to(ROOT)}")
+
+
 def main():
     if not (ROOT / "extensions").is_dir():
         sys.exit(f"No extensions/ directory under {ROOT}")
+
+    ensure_lint_config()
 
     # Opt-in: the lint fix no longer depends on it, and it edits build configuration.
     if os.environ.get("FORCE_MIN_SDK", "off").lower() == "on":
