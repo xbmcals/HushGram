@@ -517,6 +517,8 @@ Turn on %1$s to use this slider.	Bu kaydırıcıyı kullanmak için %1$s seçene
 Turn on Story ring size to use this choice.	Bu seçimi kullanmak için Hikâye halkası boyutu seçeneğini açın.
 # context: Settings page, Reels: the line under the greyed-out Fill the screen switch while Show the whole reel is on
 Turn off Show the whole reel to use this choice.	Bu seçimi kullanmak için Reels videosunun tamamını göster seçeneğini kapatın.
+# context: Settings page, Feed: the line under the greyed-out Time in the top corner switch while Time under the tags button is on (#788)
+Turn off Time under the tags button to use this choice.	Bu seçimi kullanmak için Süre etiketler düğmesinin altında seçeneğini kapatın.
 Turn on Default playback quality to use this choice.	Bu seçimi kullanmak için Varsayılan oynatma kalitesi seçeneğini açın.
 Updating remembered positions...	Kaydedilen konumlar güncelleniyor...
 Undo cleared positions	Silinen konumları geri yükle
@@ -893,7 +895,7 @@ Media link copied. It stops working after a few days.	Medya bağlantısı kopyal
 No direct link for this one	Bunun için doğrudan bağlantı yok
 Posted %1$s	Paylaşıldı: %1$s
 Size %1$d × %2$d	Boyut %1$d × %2$d
-Adds Details to a feed post's or reel's menu. It shows when it went up, who posted it, its media ID and the size Download saves, with buttons to copy the file link, username and caption.	Akıştaki bir gönderinin ya da reelin menüsüne Ayrıntılar ekler. Ne zaman paylaşıldığını, kimin paylaştığını, medya kimliğini ve İndir'in kaydettiği boyutu gösterir. Dosya bağlantısını, kullanıcı adını ve açıklamayı kopyalayan düğmeler de vardır.
+Adds Details to a feed post's or reel's menu. It shows when it went up, who posted it, its media ID and the size Download saves, with buttons to copy the file link, username and caption, open the photo or video in another app, and read its text with Google Lens. A story's menu gets Copy username.	Akıştaki bir gönderinin ya da reelin menüsüne Ayrıntılar ekler. Ne zaman paylaşıldığını, kimin paylaştığını, medya kimliğini ve İndir'in kaydettiği boyutu gösterir. Dosya bağlantısını, kullanıcı adını ve açıklamayı kopyalayan, fotoğrafı ya da videoyu başka bir uygulamada açan ve metnini Google Lens ile okuyan düğmeler de vardır. Bir hikayenin menüsüne Kullanıcı adını kopyala eklenir.
 Caption	Açıklama
 Caption copied	Açıklama kopyalandı
 Copy caption	Açıklamayı kopyala
@@ -1241,7 +1243,7 @@ Never. Pick a time and the tab bar slides away once a reel has played that long 
 # context: summary of the Hide the tab bar on Reels row; %1$d is the seconds picked, 2, 3, 5 or 8
 On Reels, the tab bar slides away after %1$d seconds without a touch. Tap the bottom edge of the screen, change tab or press Back to bring it back. Restart Instagram after changing it.	Reels'te çubuk, %1$d saniye dokunulmadığında kayarak kaybolur. Geri getirmek için ekranın alt kenarına dokunun, sekme değiştirin veya Geri'ye basın. Değiştirdikten sonra Instagram'ı yeniden başlatın.
 Start feed videos with sound	Akış videolarını sesli başlat
-Videos on Home play with their sound on, the same as tapping a video's speaker. Mute one and the ones after it stay muted. Your phone's ringer and volume still count, so on silent or with the volume down, they stay quiet.	Ana Sayfa'daki videolar, bir videonun hoparlörüne dokunmuş gibi sesi açık olarak oynar. Birini sessize alırsanız sonrakiler de sessiz kalır. Telefonunuzun zil modu ve ses düzeyi yine geçerlidir, bu yüzden sessizde veya ses kapalıyken videolar sessiz kalır.
+Videos on Home play with their sound on, the same as tapping a video's speaker, and so do songs on photo posts. Mute one and the ones after it stay muted. Your phone's ringer and volume still count, so on silent or with the volume down, they stay quiet.	Ana Sayfa'daki videolar, bir videonun hoparlörüne dokunmuş gibi sesi açık olarak oynar, fotoğraf gönderilerindeki şarkılar da öyle. Birini sessize alırsanız sonrakiler de sessiz kalır. Telefonunuzun zil modu ve ses düzeyi yine geçerlidir, bu yüzden sessizde veya ses kapalıyken videolar sessiz kalır.
 Start feed videos muted	Akış videolarını sessiz başlat
 Videos on Home start silent, even after you turn the sound on in Reels, so reels keep their sound. Tap a video's speaker to hear that one. Wins over Start feed videos with sound.	Ana Sayfa'daki videolar, Reels'te sesi açtıktan sonra bile sessiz başlar, böylece reels videoları seslerini korur. Duymak istediğiniz videonun hoparlörüne dokunun. Akış videolarını sesli başlat ayarından önceliklidir.
 Tap a feed video to pause it	Duraklatmak için akış videosuna dokun
@@ -2633,6 +2635,10 @@ The time on the seek bar counts down what's left of the video, like -0:33 / 0:45
 Time under the tags button	Süre etiketler düğmesinin altında
 # context: Summary of Time under the tags button (#711)
 Puts the time in the corner under the tags button instead of the middle of the bar.	Süreyi çubuğun ortası yerine etiketler düğmesinin altındaki köşeye koyar.
+# context: Feed settings: a switch under Time on the seek bar that moves the time to the video's top corner, below Instagram's countdown (#788)
+Time in the top corner	Süre üst köşede
+# context: Summary of Time in the top corner (#788)
+Puts the time in the top corner of the video instead of over the bar, just below anything Instagram shows there, like its countdown.	Süreyi çubuğun üstü yerine videonun üst köşesine, Instagram'ın orada gösterdiği geri sayım gibi şeylerin hemen altına koyar.
 # context: Feed settings: a switch under Tap a feed video to pause it that keeps any tap on a feed video from opening Reels (#706)
 Taps on feed videos stay in the feed	Akış videolarına dokunmak akışta kalır
 # context: Summary of Taps on feed videos stay in the feed; Tap a feed video to pause it is the switch above it, use its translation (#706)
@@ -2674,7 +2680,7 @@ Keeps 2x only when you hold the video for about 3 seconds. Let go sooner and it 
 # context: Feed settings: a switch under Keep 2x after you let go that leaves Instagram's 2x label on a feed video kept at 2x (#860)
 Show 2x after you let go	Bırakınca 2x göster
 # context: Summary of Show 2x after you let go, a switch under Keep 2x after you let go (#860)
-A feed video that keeps playing at 2x shows Instagram's 2x and time labels in place of the name until it goes back to normal speed.	2x hızda oynamaya devam eden bir akış videosu, normal hıza dönene kadar adın yerine Instagram'ın 2x ve süre etiketlerini gösterir.
+A feed video that keeps playing at 2x shows a 2x label at the top until it goes back to normal speed.	2x hızda oynamaya devam eden bir akış videosu, normal hıza dönene kadar üstte bir 2x etiketi gösterir.
 # context: Feed settings: a switch under Hold for 2x on feed videos that keeps the poster's name over the video while it's held at 2x (#552)
 Keep the name while you hold	Basılı tutarken adı koru
 # context: Summary of Keep the name while you hold, a switch under Hold for 2x on feed videos (#552)
@@ -2953,3 +2959,11 @@ Long press a chat to group it	Gruplamak için bir sohbete basılı tut
 # context: Stories switch Story rings on saved posts and its summary, for posts on the Saved page (#790)
 Story rings on saved posts	Kayıtlı gönderilerde hikâye halkaları
 Posts you saved show the story ring around the author's picture, like Home does, and a tap on it opens their story. It only uses stories Instagram has already loaded.	Kaydettiğin gönderiler, Ana sayfadaki gibi paylaşanın fotoğrafının çevresinde hikâye halkasını gösterir ve ona dokunmak hikâyeyi açar. Yalnızca Instagram'ın zaten yüklediği hikâyeleri kullanır.
+# context: Details in a post's menu (#839): a row under the facts that sends the photo, or a video's cover, to Google Lens to read its words
+Read text with Lens	Metni Lens ile oku
+# context: Details in a post's menu (#839): a toast while Open with or Read text with Lens fetches the post's file
+Getting the file ready	Dosya hazırlanıyor
+# context: Details in a post's menu (#839): a toast when Open with or Read text with Lens couldn't fetch the post's file
+Couldn't get the file	Dosya alınamadı
+# context: Details in a post's menu (#839): a toast when no app on the phone takes the photo or video Open with offers
+No app here can open it	Açacak uygulama yok

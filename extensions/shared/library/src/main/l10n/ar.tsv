@@ -101,7 +101,7 @@ A double tap on a post or reel no longer likes it or shows a heart. A single tap
 A double tap on a reel doesn't like it. Turn this off to keep double tap to like on reels.	النقر المزدوج على reel لا يُعجبه. أوقف هذا للإبقاء على النقر المزدوج للإعجاب بـ Reels.
 A double tap on the left side of a reel goes back, and on the right side it goes ahead, as far as Skip length says. A double tap in the middle still likes it. Reels no longer than that don't skip.	النقر المزدوج على يسار reel يرجع، وعلى يمينه يتقدم، بقدر ما يحدده طول التخطي. والنقر المزدوج في الوسط لا يزال يُعجبه. لا يتم تخطي Reels التي لا تزيد مدتها على ذلك.
 A fainter bar and handle, so more of the video shows through.	شريط ومقبض أخفّ، ليظهر المزيد من الفيديو.
-A feed video that keeps playing at 2x shows Instagram's 2x and time labels in place of the name until it goes back to normal speed.	يعرض فيديو المتابَعات الذي يستمر بسرعة 2x علامتي 2x والوقت من Instagram بدلاً من الاسم حتى يعود إلى السرعة العادية.
+A feed video that keeps playing at 2x shows a 2x label at the top until it goes back to normal speed.	يعرض فيديو المتابَعات الذي يستمر بسرعة 2x علامة 2x في الأعلى حتى يعود إلى السرعة العادية.
 A feed video you hold for 2x keeps playing at 2x after you let go. Hold it again to go back to normal speed.	فيديو في آخر الأخبار تضغط عليه مطوّلًا للسرعة 2x يواصل التشغيل بسرعة 2x بعد أن ترفع إصبعك. اضغط مطوّلًا مرة أخرى للعودة إلى السرعة العادية.
 A file named %1$s in %2$s paused HushGram.	ملف باسم %1$s في %2$s أوقف HushGram.
 A finished story stays on screen until you tap or swipe. Turn this off for Instagram's timing.	القصة المنتهية تبقى على الشاشة حتى تنقر أو تسحب. أوقف هذا لتوقيت Instagram.
@@ -142,8 +142,8 @@ A swipe left on Home no longer opens Messages. The Messages button still does.	�
 A swipe right on Home opens %1$s. The + button still opens the camera.	السحب يمينًا في الرئيسية يفتح %1$s. زر + ما زال يفتح الكاميرا.
 A swipe up on someone's story no longer opens the reply box and its reactions. Tap Send message to reply.	لم يعد السحب لأعلى في قصة شخص يفتح مربع الرد وتفاعلاته. اضغط إرسال رسالة للرد.
 A tap on a feed video, or on the screen it shows when it ends, no longer opens it full screen in Reels. Tap a feed video to pause it still pauses it, and the buttons on that screen still work.	لم تعد النقرة على فيديو في العرض، أو على الشاشة التي تظهر عند انتهائه، تفتحه بملء الشاشة في Reels. النقر على فيديو في العرض لإيقافه ما زال يوقفه، والأزرار في تلك الشاشة ما زالت تعمل.
-# context: Feed settings: a switch under Tap a feed video to pause it that pauses only for a tap in the middle of the video (#706)
 Hide posts when you block someone	إخفاء المنشورات عند حظر شخص
+# context: Feed settings: a switch under Tap a feed video to pause it that pauses only for a tap in the middle of the video (#706)
 Only the middle pauses it	المنتصف فقط يوقفه مؤقتًا
 # context: Summary of Only the middle pauses it; Taps on feed videos stay in the feed is another switch, use its translation (#706)
 Only a tap in the middle of the video, where Instagram puts its play button, pauses or plays it. A tap anywhere else opens it in Reels, unless Taps on feed videos stay in the feed is on.	فقط النقر في منتصف الفيديو، حيث يضع Instagram زر التشغيل، يوقفه مؤقتًا أو يشغّله. أي نقرة في مكان آخر تفتحه في Reels، إلا إذا كان خيار النقر على فيديوهات الخلاصة يبقى داخل الخلاصة مفعّلًا.
@@ -193,7 +193,7 @@ Adds Copy text to the menu a story's three dots open. It copies the words Instag
 Adds Copy to a selected comment's menu. Copies the original text, including line breaks.	يضيف نسخًا إلى قائمة التعليق المحدد. ينسخ النص الأصلي بما في ذلك فواصل الأسطر.
 Adds Copy username and Copy bio to the menu on someone's profile. Each copies the text exactly as the account has it.	يضيف نسخ اسم المستخدم ونسخ النبذة إلى القائمة في ملف شخص ما. كل واحد ينسخ النص كما هو في الحساب تمامًا.
 Adds Copy username to a selected comment's menu, for the account that wrote it.	يضيف نسخ اسم المستخدم إلى قائمة التعليق المحدد، للحساب الذي كتبه.
-Adds Details to a feed post's or reel's menu. It shows when it went up, who posted it, its media ID and the size Download saves, with buttons to copy the file link, username and caption.	يضيف التفاصيل إلى قائمة منشور في الخلاصة أو مقطع Reels. يعرض وقت النشر ومن نشره ومعرف الوسائط وحجم التنزيل، مع أزرار لنسخ رابط الملف واسم المستخدم والتعليق.
+Adds Details to a feed post's or reel's menu. It shows when it went up, who posted it, its media ID and the size Download saves, with buttons to copy the file link, username and caption, open the photo or video in another app, and read its text with Google Lens. A story's menu gets Copy username.	يضيف التفاصيل إلى قائمة منشور في الخلاصة أو مقطع Reels. يعرض وقت النشر ومن نشره ومعرف الوسائط وحجم التنزيل، مع أزرار لنسخ رابط الملف واسم المستخدم والتعليق، وفتح الصورة أو الفيديو في تطبيق آخر، وقراءة نصه باستخدام Google Lens. وتحصل قائمة القصة على نسخ اسم المستخدم.
 Adds Download audio under Download. It saves the sound of the reel as an audio file.	يضيف تنزيل الصوت ضمن التنزيل. يحفظ صوت مقطع Reels كملف صوتي.
 Adds Download cover to the menu of a feed post with a video, and of a carousel showing one. It saves the still picture shown before the video plays, at its largest size.	يضيف تنزيل الغلاف إلى قائمة منشور في الخلاصة يحتوي على فيديو، وإلى قائمة منشور دائري يعرض واحدًا. يحفظ الصورة الثابتة التي تظهر قبل تشغيل الفيديو بأكبر حجم لها.
 Adds Download cover under Download. It saves the still picture a reel shows before it plays, at its largest size.	يضيف تنزيل الغلاف ضمن التنزيل. يحفظ الصورة الثابتة التي يعرضها مقطع Reels قبل تشغيله بأكبر حجم لها.
@@ -2190,6 +2190,10 @@ The time on the seek bar counts down what's left of the video, like -0:33 / 0:45
 Time under the tags button	الوقت تحت زر الإشارات
 # context: Summary of Time under the tags button (#711)
 Puts the time in the corner under the tags button instead of the middle of the bar.	يضع الوقت في الزاوية تحت زر الإشارات بدلًا من منتصف الشريط.
+# context: Feed settings: a switch under Time on the seek bar that moves the time to the video's top corner, below Instagram's countdown (#788)
+Time in the top corner	الوقت في الزاوية العلوية
+# context: Summary of Time in the top corner (#788)
+Puts the time in the top corner of the video instead of over the bar, just below anything Instagram shows there, like its countdown.	يضع الوقت في الزاوية العلوية من الفيديو بدلًا من فوق الشريط، أسفل أي شيء يعرضه Instagram هناك مباشرةً، مثل العدّ التنازلي.
 The top of Home goes back to your header text, or to Instagram's logo.	أعلى الصفحة الرئيسية يعيد نص الترويسة الخاص بك، أو شعار Instagram.
 The top of Home says %1$s.	أعلى الصفحة الرئيسية يعرض %1$s.
 The top of Home shows %1$s. Tap to pick another.	أعلى الصفحة الرئيسية يعرض %1$s. انقر لاختيار غيره.
@@ -2247,6 +2251,8 @@ Turn it off to leave a chat's top bar as Instagram draws it, with no frosted ban
 Turn off HDR brightness boosts	أوقف تعزيزات سطوع HDR
 Turn off Hide the Search tab and restart.	أوقف إخفاء علامة تبويب البحث وأعد التشغيل.
 Turn off Show the whole reel to use this choice.	أوقف إظهار الريل بالكامل لاستخدام هذا الخيار.
+# context: Settings page, Feed: the line under the greyed-out Time in the top corner switch while Time under the tags button is on (#788)
+Turn off Time under the tags button to use this choice.	أوقف الوقت تحت زر الإشارات لاستخدام هذا الخيار.
 Turn off auto scroll	أوقف التمرير التلقائي
 Turn off double tap to like	أوقف اللمس المزدوج للإعجاب
 Turn on %1$s to use this slider.	شغّل %1$s لاستخدام شريط التمرير.
@@ -2333,7 +2339,7 @@ Videos and reels over two minutes pick up where you left off. Seek to start else
 Videos are named %1$s. Photos are named %2$s followed by the date and time.	تُسمى الفيديوهات %1$s. تُسمى الصور %2$s يليها التاريخ والوقت.
 Videos go to %1$s and photos to %2$s.	تُرسل الفيديوهات إلى %1$s والصور إلى %2$s.
 Videos in Explore wait for your tap. Feed videos, reels and stories play as Instagram plays them.	فيديوهات Explore تنتظر نقراتك. فيديوهات Feed وReels والقصص تُعرض كما يعرضها Instagram.
-Videos on Home play with their sound on, the same as tapping a video's speaker. Mute one and the ones after it stay muted. Your phone's ringer and volume still count, so on silent or with the volume down, they stay quiet.	فيديوهات Home تُشغَّل بصوتها، مثل النقر على مكبر صوت الفيديو. كتم أحدها يكتم ما بعده. نغمة الرنين ومستوى الصوت لا يزالان مُحتسبَين، لذلك في وضع الصامت أو مع خفض الصوت، تظل هادئة.
+Videos on Home play with their sound on, the same as tapping a video's speaker, and so do songs on photo posts. Mute one and the ones after it stay muted. Your phone's ringer and volume still count, so on silent or with the volume down, they stay quiet.	فيديوهات Home تُشغَّل بصوتها، مثل النقر على مكبر صوت الفيديو، وكذلك أغاني منشورات الصور. كتم أحدها يكتم ما بعده. نغمة الرنين ومستوى الصوت لا يزالان مُحتسبَين، لذلك في وضع الصامت أو مع خفض الصوت، تظل هادئة.
 Videos on Home start silent, even after you turn the sound on in Reels, so reels keep their sound. Tap a video's speaker to hear that one. Wins over Start feed videos with sound.	فيديوهات Home تبدأ صامتة، حتى بعد تشغيل الصوت في Reels، لذا تحتفظ Reels بصوتها. انقر على مكبر صوت الفيديو لسماعه. تغلب على تشغيل فيديوهات Feed بصوت.
 Videos play at the best quality up to %1$s that Instagram offers for each, or the closest above.	تُشغَّل الفيديوهات بأفضل جودة حتى %1$s يقدمها Instagram لكل منها، أو أقرب جودة أعلى.
 Videos play at the highest quality Instagram offers for each.	تُشغَّل الفيديوهات بأعلى جودة يقدمها Instagram لكل منها.
@@ -2489,3 +2495,11 @@ Long press a chat to group it	اضغط مطولًا على دردشة لتجمي
 # context: Stories switch Story rings on saved posts and its summary, for posts on the Saved page (#790)
 Story rings on saved posts	حلقات القصص في المنشورات المحفوظة
 Posts you saved show the story ring around the author's picture, like Home does, and a tap on it opens their story. It only uses stories Instagram has already loaded.	تُظهر المنشورات التي حفظتها حلقة القصة حول صورة صاحبها، كما في الرئيسية، والضغط عليها يفتح قصته. يستخدم فقط القصص التي حمّلها Instagram بالفعل.
+# context: Details in a post's menu (#839): a row under the facts that sends the photo, or a video's cover, to Google Lens to read its words
+Read text with Lens	قراءة النص باستخدام Lens
+# context: Details in a post's menu (#839): a toast while Open with or Read text with Lens fetches the post's file
+Getting the file ready	جارٍ تجهيز الملف
+# context: Details in a post's menu (#839): a toast when Open with or Read text with Lens couldn't fetch the post's file
+Couldn't get the file	تعذّر جلب الملف
+# context: Details in a post's menu (#839): a toast when no app on the phone takes the photo or video Open with offers
+No app here can open it	لا يوجد تطبيق هنا يفتحه

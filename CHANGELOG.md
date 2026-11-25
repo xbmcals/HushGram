@@ -5,11 +5,17 @@ Every HushGram release, newest first.
 ## Unreleased
 
 * HushGram now patches Instagram 457.0.0.55.73 instead of 456.0.0.53.78. Get APKMirror's (arm64-v8a) (480-640dpi) (Android 9.0+) bundle, build 386314341. Its 480dpi build, 386314297, works too. 32-bit phones take build 386314340 (armeabi-v7a) and x86_64 emulators build 386314286.
+* `Seek bar on stories` and its time now show the moment a story's video starts. On a reel shared to a story they popped in a quarter of a second late, which looked like the story jumping. Reported in #618.
+* With `Liquid glass look` on, Search's icon shows whole in its circle, and the other tabs sit in the middle of the pill. Instagram's padding on its floating tab bar cut the icon off. Reported in #843.
+* On feed videos with tagged people, the tags button now moves up above the seek bar too, and the button from `Seek bar button on feed videos` sits beside it instead of on it. Reported in #794.
+* `Start feed videos with sound` now plays a photo post's song with sound too. A song that came before any video stayed silent, since Instagram only played it once a video had turned the sound on. Asked for in #762.
+* `Details in a post's menu` now offers `Open with`, handing the photo or video to another app, and `Read text with Lens` for a photo or a video's cover. Stories get `Copy username` too. Asked for in #839.
 * `Log out in Home's menu` is new under Tab bar. It puts Log out after HushGram settings in the list `Menu button on Home's header` opens, and starts Instagram's own Log out. Starts off. Asked for in #850.
 * `A story ring opens the story` is new under Profiles. Tapping a ringed profile picture opens the story whenever Instagram has it, where it sometimes opened the picture. Starts off. Asked for in #823.
 * `Whole story in the story menu` under Stories adds Show the whole story to a story's menu while `Stories fill the screen` is on. It fits just that story inside the screen. Starts off. Asked for in #845.
 * `Whole reel in the reel menu` under Reels adds Show the whole reel to a reel's three-dot menu. It fits that one reel inside the screen until you swipe past it. Starts off. Asked for in #845.
 * `Reels on Home below the name` shows the whole reel now. It was cut to Instagram's 4:5 post shape, losing its top and bottom. Reported in #788.
+* `Time in the top corner` is new under Feed. It moves the time from a feed video's seek bar to the video's top corner, just below Instagram's own countdown. Starts off. Asked for in #788.
 * `Copy links from chat buttons` is new under Messages. Hold a chat message with link buttons, like an automated account's, and tap `Copy link` to copy where a button goes without opening it. Starts off. Asked for in #852.
 * `Hold a follow list's tabs to filter it` is new under Profiles. Hold a tab atop any Followers or Following list to show everyone, only public accounts or only private ones. Starts off. Asked for in #847.
 * `Follow dates in your lists` is new under Profiles. Your own Followers and Following lists show since when each account is there, counted from when you turn it on. Starts off. Asked for in #847.
@@ -54,7 +60,7 @@ Every HushGram release, newest first.
 * `Hold the middle to pause it`, new under `Hold for 2x on feed videos`, pauses a feed video while you hold its middle and plays it as you let go. Either side plays 2x. Starts off. Asked for in #639.
 * `Only the middle pauses it` is new under `Tap a feed video to pause it` in Feed. A tap off the video's middle opens Reels instead of pausing. Starts off. Asked for in #706.
 * `Hide ads` now also takes the shop or ad card off the top of a reel's comments. Reported in #857.
-* `Show 2x after you let go` is new under `Keep 2x after you let go` in Feed. A feed video kept at 2x keeps Instagram's 2x and time labels on until it's back to normal speed. Starts off. Asked for in #860.
+* `Show 2x after you let go` under `Keep 2x after you let go` in Feed puts a 2x label at the top of a kept feed video until it's back to normal speed. Starts off. Asked for in #860.
 * Download on a photo post with a song in Home now asks `Download as video` or `Download as photo`, as reels do. That goes for the post's menu, a hold and `Download button on feed posts`. Asked for in #71.
 * `Hide posts when you block someone` is new at the end of Feed. Block someone and their posts leave Home right away, without a refresh. Starts off. Asked for in #861.
 * With `Download button on feed posts` on, a post's Share and Save icons no longer stretch to fill their space now and then. Every icon in the row keeps its own size. Reported in #840.

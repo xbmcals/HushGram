@@ -518,6 +518,8 @@ Turn on %1$s to use this slider.	이 슬라이더를 사용하려면 ‘%1$s’�
 Turn on Story ring size to use this choice.	이 옵션을 사용하려면 ‘스토리 링 사이즈’를 활성화하세요
 # context: Settings page, Reels: the line under the greyed-out Fill the screen switch while Show the whole reel is on
 Turn off Show the whole reel to use this choice.	이 옵션을 사용하려면 ‘릴스 전체 보기’를 비활성화하세요
+# context: Settings page, Feed: the line under the greyed-out Time in the top corner switch while Time under the tags button is on (#788)
+Turn off Time under the tags button to use this choice.	이 옵션을 사용하려면 ‘태그 버튼 아래에 시간 표시’를 비활성화하세요
 Turn on Default playback quality to use this choice.	이 옵션을 사용하려면 ‘기본 재생 화질’을 활성화하세요
 Updating remembered positions...	저장된 위치를 업데이트하는 중...
 Undo cleared positions	위치 지우기 실행 취소
@@ -892,7 +894,7 @@ Media link copied. It stops working after a few days.	미디어 링크를 복사
 No direct link for this one	이 항목에는 직접 링크가 없습니다
 Posted %1$s	게시 시간 %1$s
 Size %1$d × %2$d	크기 %1$d × %2$d
-Adds Details to a feed post's or reel's menu. It shows when it went up, who posted it, its media ID and the size Download saves, with buttons to copy the file link, username and caption.	피드 게시물이나 릴스의 메뉴에 상세 정보를 추가합니다. 게시 시각, 올린 사람, 미디어 ID, 다운로드로 저장되는 크기를 보여주고 파일 링크, 사용자 이름, 캡션을 복사하는 버튼이 있습니다.
+Adds Details to a feed post's or reel's menu. It shows when it went up, who posted it, its media ID and the size Download saves, with buttons to copy the file link, username and caption, open the photo or video in another app, and read its text with Google Lens. A story's menu gets Copy username.	피드 게시물이나 릴스의 메뉴에 상세 정보를 추가합니다. 게시 시각, 올린 사람, 미디어 ID, 다운로드로 저장되는 크기를 보여주고 파일 링크, 사용자 이름, 캡션을 복사하고, 사진이나 동영상을 다른 앱에서 열고, Google Lens로 텍스트를 읽는 버튼이 있습니다. 스토리 메뉴에는 사용자 이름 복사가 추가됩니다.
 Caption	캡션
 Caption copied	캡션을 복사했습니다
 Copy caption	캡션 복사
@@ -1240,7 +1242,7 @@ Never. Pick a time and the tab bar slides away once a reel has played that long 
 # context: summary of the Hide the tab bar on Reels row; %1$d is the seconds picked, 2, 3, 5 or 8
 On Reels, the tab bar slides away after %1$d seconds without a touch. Tap the bottom edge of the screen, change tab or press Back to bring it back. Restart Instagram after changing it.	릴스에서 %1$d초 동안 터치가 없으면 탭 바가 아래로 사라집니다. 다시 보려면 화면 아래쪽 가장자리를 탭하거나 탭을 바꾸거나 뒤로를 누르세요. 변경한 뒤에는 Instagram을 다시 시작하세요.
 Start feed videos with sound	피드 동영상을 소리와 함께 시작
-Videos on Home play with their sound on, the same as tapping a video's speaker. Mute one and the ones after it stay muted. Your phone's ringer and volume still count, so on silent or with the volume down, they stay quiet.	홈의 동영상이 동영상의 스피커를 누른 것처럼 소리가 켜진 채로 재생됩니다. 하나를 음소거하면 이후 동영상도 음소거된 상태로 유지됩니다. 휴대전화의 벨소리 모드와 볼륨은 그대로 적용되므로 무음이거나 볼륨이 꺼져 있으면 조용한 상태로 유지됩니다.
+Videos on Home play with their sound on, the same as tapping a video's speaker, and so do songs on photo posts. Mute one and the ones after it stay muted. Your phone's ringer and volume still count, so on silent or with the volume down, they stay quiet.	홈의 동영상이 동영상의 스피커를 누른 것처럼 소리가 켜진 채로 재생되며, 사진 게시물의 음악도 마찬가지입니다. 하나를 음소거하면 이후 동영상도 음소거된 상태로 유지됩니다. 휴대전화의 벨소리 모드와 볼륨은 그대로 적용되므로 무음이거나 볼륨이 꺼져 있으면 조용한 상태로 유지됩니다.
 Start feed videos muted	피드 동영상을 음소거로 시작
 Videos on Home start silent, even after you turn the sound on in Reels, so reels keep their sound. Tap a video's speaker to hear that one. Wins over Start feed videos with sound.	릴스에서 소리를 켠 후에도 홈의 동영상은 음소거로 시작되므로 릴스는 소리를 유지합니다. 들으려는 동영상의 스피커를 누르세요. 피드 동영상을 소리와 함께 시작보다 우선합니다.
 Tap a feed video to pause it	피드 동영상을 탭하여 일시정지
@@ -2632,6 +2634,10 @@ The time on the seek bar counts down what's left of the video, like -0:33 / 0:45
 Time under the tags button	태그 버튼 아래에 시간 표시
 # context: Summary of Time under the tags button (#711)
 Puts the time in the corner under the tags button instead of the middle of the bar.	시간을 막대 가운데 대신 태그 버튼 아래 모서리에 표시합니다.
+# context: Feed settings: a switch under Time on the seek bar that moves the time to the video's top corner, below Instagram's countdown (#788)
+Time in the top corner	위쪽 모서리에 시간 표시
+# context: Summary of Time in the top corner (#788)
+Puts the time in the top corner of the video instead of over the bar, just below anything Instagram shows there, like its countdown.	시간을 막대 위 대신 동영상 위쪽 모서리에, Instagram이 그곳에 표시하는 카운트다운 같은 항목 바로 아래에 표시합니다.
 # context: Feed settings: a switch under Tap a feed video to pause it that keeps any tap on a feed video from opening Reels (#706)
 Taps on feed videos stay in the feed	피드 동영상을 탭해도 피드에 머물기
 # context: Summary of Taps on feed videos stay in the feed; Tap a feed video to pause it is the switch above it, use its translation (#706)
@@ -2673,7 +2679,7 @@ Keeps 2x only when you hold the video for about 3 seconds. Let go sooner and it 
 # context: Feed settings: a switch under Keep 2x after you let go that leaves Instagram's 2x label on a feed video kept at 2x (#860)
 Show 2x after you let go	손을 뗀 후 2배속 표시
 # context: Summary of Show 2x after you let go, a switch under Keep 2x after you let go (#860)
-A feed video that keeps playing at 2x shows Instagram's 2x and time labels in place of the name until it goes back to normal speed.	2배속으로 계속 재생되는 피드 동영상에는 보통 속도로 돌아갈 때까지 이름 대신 Instagram의 2배속 및 시간 표시가 나타납니다.
+A feed video that keeps playing at 2x shows a 2x label at the top until it goes back to normal speed.	2배속으로 계속 재생되는 피드 동영상에는 보통 속도로 돌아갈 때까지 위쪽에 2x 표시가 나타납니다.
 # context: Feed settings: a switch under Hold for 2x on feed videos that keeps the poster's name over the video while it's held at 2x (#552)
 Keep the name while you hold	길게 누르는 동안 이름 유지
 # context: Summary of Keep the name while you hold, a switch under Hold for 2x on feed videos (#552)
@@ -2952,3 +2958,11 @@ Long press a chat to group it	채팅을 길게 눌러 그룹에 넣으세요
 # context: Stories switch Story rings on saved posts and its summary, for posts on the Saved page (#790)
 Story rings on saved posts	저장한 게시물의 스토리 링
 Posts you saved show the story ring around the author's picture, like Home does, and a tap on it opens their story. It only uses stories Instagram has already loaded.	저장한 게시물에서도 홈처럼 작성자 사진에 스토리 링이 보이고, 누르면 스토리가 열립니다. Instagram이 이미 불러온 스토리만 사용합니다.
+# context: Details in a post's menu (#839): a row under the facts that sends the photo, or a video's cover, to Google Lens to read its words
+Read text with Lens	Lens로 텍스트 읽기
+# context: Details in a post's menu (#839): a toast while Open with or Read text with Lens fetches the post's file
+Getting the file ready	파일을 준비하는 중
+# context: Details in a post's menu (#839): a toast when Open with or Read text with Lens couldn't fetch the post's file
+Couldn't get the file	파일을 가져오지 못했어요
+# context: Details in a post's menu (#839): a toast when no app on the phone takes the photo or video Open with offers
+No app here can open it	열 수 있는 앱이 없어요

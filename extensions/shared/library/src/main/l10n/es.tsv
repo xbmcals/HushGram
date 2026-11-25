@@ -517,6 +517,8 @@ Turn on %1$s to use this slider.	Activa «%1$s» para usar este control deslizan
 Turn on Story ring size to use this choice.	Activa «Tamaño de los anillos de historias» para usar esta opción.
 # context: Settings page, Reels: the line under the greyed-out Fill the screen switch while Show the whole reel is on
 Turn off Show the whole reel to use this choice.	Desactiva «Mostrar el reel completo» para usar esta opción.
+# context: Settings page, Feed: the line under the greyed-out Time in the top corner switch while Time under the tags button is on (#788)
+Turn off Time under the tags button to use this choice.	Desactiva «Tiempo debajo del botón de etiquetas» para usar esta opción.
 Turn on Default playback quality to use this choice.	Activa «Calidad de reproducción predeterminada» para usar esta opción.
 Updating remembered positions...	Actualizando las posiciones guardadas...
 Undo cleared positions	Restaurar las posiciones borradas
@@ -893,7 +895,7 @@ Media link copied. It stops working after a few days.	Enlace del contenido copia
 No direct link for this one	No hay enlace directo para este
 Posted %1$s	Publicado el %1$s
 Size %1$d × %2$d	Tamaño %1$d × %2$d
-Adds Details to a feed post's or reel's menu. It shows when it went up, who posted it, its media ID and the size Download saves, with buttons to copy the file link, username and caption.	Añade Detalles al menú de una publicación del feed o de un reel. Muestra cuándo se publicó, quién la publicó, su ID de contenido y el tamaño que guarda Descargar, con botones para copiar el enlace del archivo, el nombre de usuario y el pie de foto.
+Adds Details to a feed post's or reel's menu. It shows when it went up, who posted it, its media ID and the size Download saves, with buttons to copy the file link, username and caption, open the photo or video in another app, and read its text with Google Lens. A story's menu gets Copy username.	Añade Detalles al menú de una publicación del feed o de un reel. Muestra cuándo se publicó, quién la publicó, su ID de contenido y el tamaño que guarda Descargar, con botones para copiar el enlace del archivo, el nombre de usuario y el pie de foto, abrir la foto o el video en otra app y leer su texto con Google Lens. El menú de una historia recibe Copiar nombre de usuario.
 Caption	Texto
 Caption copied	Texto copiado
 Copy caption	Copiar texto
@@ -1241,7 +1243,7 @@ Never. Pick a time and the tab bar slides away once a reel has played that long 
 # context: summary of the Hide the tab bar on Reels row; %1$d is the seconds picked, 2, 3, 5 or 8
 On Reels, the tab bar slides away after %1$d seconds without a touch. Tap the bottom edge of the screen, change tab or press Back to bring it back. Restart Instagram after changing it.	En Reels, la barra de pestañas se desliza fuera de la vista tras %1$d segundos sin tocar. Toca el borde inferior de la pantalla, cambia de pestaña o pulsa Atrás para que vuelva. Reinicia Instagram después de cambiarlo.
 Start feed videos with sound	Iniciar los videos del feed con sonido
-Videos on Home play with their sound on, the same as tapping a video's speaker. Mute one and the ones after it stay muted. Your phone's ringer and volume still count, so on silent or with the volume down, they stay quiet.	Los videos de Inicio se reproducen con el sonido activado, igual que al tocar el altavoz de un video. Si silencias uno, los siguientes siguen en silencio. El timbre y el volumen del teléfono siguen contando, así que en silencio o con el volumen bajado se quedan mudos.
+Videos on Home play with their sound on, the same as tapping a video's speaker, and so do songs on photo posts. Mute one and the ones after it stay muted. Your phone's ringer and volume still count, so on silent or with the volume down, they stay quiet.	Los videos de Inicio se reproducen con el sonido activado, igual que al tocar el altavoz de un video, y también las canciones de las publicaciones de fotos. Si silencias uno, los siguientes siguen en silencio. El timbre y el volumen del teléfono siguen contando, así que en silencio o con el volumen bajado se quedan mudos.
 Start feed videos muted	Iniciar los videos del feed sin sonido
 Videos on Home start silent, even after you turn the sound on in Reels, so reels keep their sound. Tap a video's speaker to hear that one. Wins over Start feed videos with sound.	Los videos de Inicio empiezan en silencio, incluso después de activar el sonido en Reels, para que los reels mantengan su sonido. Toca el altavoz de un video para escuchar ese. Tiene prioridad sobre Iniciar los videos del feed con sonido.
 Tap a feed video to pause it	Toca un video del feed para pausarlo
@@ -2633,6 +2635,10 @@ The time on the seek bar counts down what's left of the video, like -0:33 / 0:45
 Time under the tags button	Tiempo debajo del botón de etiquetas
 # context: Summary of Time under the tags button (#711)
 Puts the time in the corner under the tags button instead of the middle of the bar.	Pone el tiempo en la esquina, debajo del botón de etiquetas, en lugar del centro de la barra.
+# context: Feed settings: a switch under Time on the seek bar that moves the time to the video's top corner, below Instagram's countdown (#788)
+Time in the top corner	Tiempo en la esquina superior
+# context: Summary of Time in the top corner (#788)
+Puts the time in the top corner of the video instead of over the bar, just below anything Instagram shows there, like its countdown.	Pone el tiempo en la esquina superior del video en lugar de sobre la barra, justo debajo de lo que Instagram muestre ahí, como su cuenta atrás.
 # context: Feed settings: a switch under Tap a feed video to pause it that keeps any tap on a feed video from opening Reels (#706)
 Taps on feed videos stay in the feed	Los toques en videos del feed se quedan en el feed
 # context: Summary of Taps on feed videos stay in the feed; Tap a feed video to pause it is the switch above it, use its translation (#706)
@@ -2674,7 +2680,7 @@ Keeps 2x only when you hold the video for about 3 seconds. Let go sooner and it 
 # context: Feed settings: a switch under Keep 2x after you let go that leaves Instagram's 2x label on a feed video kept at 2x (#860)
 Show 2x after you let go	Mostrar 2x al soltar
 # context: Summary of Show 2x after you let go, a switch under Keep 2x after you let go (#860)
-A feed video that keeps playing at 2x shows Instagram's 2x and time labels in place of the name until it goes back to normal speed.	Un video del feed que sigue a 2x muestra las etiquetas de 2x y de tiempo de Instagram en lugar del nombre hasta que vuelve a la velocidad normal.
+A feed video that keeps playing at 2x shows a 2x label at the top until it goes back to normal speed.	Un video del feed que sigue a 2x muestra una etiqueta de 2x arriba hasta que vuelve a la velocidad normal.
 # context: Feed settings: a switch under Hold for 2x on feed videos that keeps the poster's name over the video while it's held at 2x (#552)
 Keep the name while you hold	Mantener el nombre al pulsar
 # context: Summary of Keep the name while you hold, a switch under Hold for 2x on feed videos (#552)
@@ -2953,3 +2959,11 @@ Long press a chat to group it	Mantén pulsado un chat para agruparlo
 # context: Stories switch Story rings on saved posts and its summary, for posts on the Saved page (#790)
 Story rings on saved posts	Aros de historias en publicaciones guardadas
 Posts you saved show the story ring around the author's picture, like Home does, and a tap on it opens their story. It only uses stories Instagram has already loaded.	Las publicaciones que guardaste muestran el aro de historia alrededor de la foto del autor, como en Inicio, y al tocarlo se abre su historia. Solo usa historias que Instagram ya cargó.
+# context: Details in a post's menu (#839): a row under the facts that sends the photo, or a video's cover, to Google Lens to read its words
+Read text with Lens	Leer texto con Lens
+# context: Details in a post's menu (#839): a toast while Open with or Read text with Lens fetches the post's file
+Getting the file ready	Preparando el archivo
+# context: Details in a post's menu (#839): a toast when Open with or Read text with Lens couldn't fetch the post's file
+Couldn't get the file	No se pudo obtener el archivo
+# context: Details in a post's menu (#839): a toast when no app on the phone takes the photo or video Open with offers
+No app here can open it	Ninguna app puede abrirlo

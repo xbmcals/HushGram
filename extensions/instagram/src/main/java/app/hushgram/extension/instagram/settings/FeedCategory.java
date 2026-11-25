@@ -43,6 +43,12 @@ import app.hushgram.extension.shared.L10n;
 final class FeedCategory {
     private FeedCategory() { }
 
+    /** What Time in the top corner does, which its row shows again once Time under the tags button goes off (#788). */
+    static String timeTopSummary() {
+        return L10n.t("Puts the time in the top corner of the video instead of over the bar, just below anything "
+                + "Instagram shows there, like its countdown.");
+    }
+
     static void add(HushgramPreferenceFragment page, PreferenceScreen screen, Context context, Set<PatchFamily> build) {
         boolean suggestions = build.contains(PatchFamily.FEED_SUGGESTIONS);
         boolean following = build.contains(PatchFamily.FOLLOWING_FEED);
@@ -250,9 +256,9 @@ final class FeedCategory {
         }
         if (feedSound) {
             feed.addPreference(toggle(context, Settings.START_FEED_VIDEOS_WITH_SOUND, L10n.t("Start feed videos with sound"),
-                    L10n.t("Videos on Home play with their sound on, the same as tapping a video's speaker. Mute one and the "
-                            + "ones after it stay muted. Your phone's ringer and volume still count, so on silent or with "
-                            + "the volume down, they stay quiet.")));
+                    L10n.t("Videos on Home play with their sound on, the same as tapping a video's speaker, and so do songs on "
+                            + "photo posts. Mute one and the ones after it stay muted. Your phone's ringer and volume still count, "
+                            + "so on silent or with the volume down, they stay quiet.")));
             feed.addPreference(toggle(context, Settings.START_FEED_VIDEOS_ON_SILENT, L10n.t("Even on silent"),
                     L10n.t("Feed videos start with sound with the phone on silent or vibrate too. Only the media "
                             + "volume counts.")));
@@ -288,8 +294,8 @@ final class FeedCategory {
                     L10n.t("Keeps 2x only when you hold the video for about 3 seconds. Let go sooner and it goes back "
                             + "to normal speed.")));
             feed.addPreference(toggle(context, Settings.HOLD_FEED_VIDEO_KEEP_BADGE, L10n.t("Show 2x after you let go"),
-                    L10n.t("A feed video that keeps playing at 2x shows Instagram's 2x and time labels in place of the "
-                            + "name until it goes back to normal speed.")));
+                    L10n.t("A feed video that keeps playing at 2x shows a 2x label at the top until it goes back to "
+                            + "normal speed.")));
             feed.addPreference(toggle(context, Settings.HOLD_FEED_VIDEO_KEEP_NAME, L10n.t("Keep the name while you hold"),
                     L10n.t("The name over a feed video stays while you hold it for 2x. Instagram's 2x and time labels "
                             + "don't show then.")));
@@ -323,6 +329,7 @@ final class FeedCategory {
                             + "A tap on the time switches back.")));
             feed.addPreference(toggle(context, Settings.FEED_SEEK_TIME_UNDER_TAGS, L10n.t("Time under the tags button"),
                     L10n.t("Puts the time in the corner under the tags button instead of the middle of the bar.")));
+            feed.addPreference(toggle(context, Settings.FEED_SEEK_TIME_TOP, L10n.t("Time in the top corner"), timeTopSummary()));
             feed.addPreference(toggle(context, Settings.FEED_DOUBLE_TAP_SKIP, L10n.t("Double tap to skip on feed videos"),
                     L10n.t("Double tap the left side of the video playing in a feed to go back, or the right side to go "
                             + "ahead, as far as Skip length says. A double tap in the middle works as before.")));

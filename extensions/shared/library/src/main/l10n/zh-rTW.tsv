@@ -522,6 +522,8 @@ Turn on %1$s to use this slider.	請啟用「%1$s」以使用此滑桿。
 Turn on Story ring size to use this choice.	請啟用「限時動態光圈尺寸」以使用此選項。
 # context: Settings page, Reels: the line under the greyed-out Fill the screen switch while Show the whole reel is on
 Turn off Show the whole reel to use this choice.	請關閉「顯示完整的 Reels」以使用此選項。
+# context: Settings page, Feed: the line under the greyed-out Time in the top corner switch while Time under the tags button is on (#788)
+Turn off Time under the tags button to use this choice.	請關閉「時間顯示在標註按鈕下方」以使用此選項。
 Turn on Default playback quality to use this choice.	請啟用「預設播放畫質」以使用此選項。
 Updating remembered positions...	正在更新記住的播放位置…
 Undo cleared positions	復原清除播放位置
@@ -896,7 +898,7 @@ Media link copied. It stops working after a few days.	已複製媒體連結。�
 No direct link for this one	此項目沒有直接連結
 Posted %1$s	發佈於 %1$s
 Size %1$d × %2$d	尺寸 %1$d × %2$d
-Adds Details to a feed post's or reel's menu. It shows when it went up, who posted it, its media ID and the size Download saves, with buttons to copy the file link, username and caption.	在動態首頁貼文或 Reel 的選單中新增「詳細資料」，顯示發佈時間、發佈者、媒體 ID 與下載儲存的尺寸，並提供複製檔案連結、使用者名稱與說明文字的按鈕。
+Adds Details to a feed post's or reel's menu. It shows when it went up, who posted it, its media ID and the size Download saves, with buttons to copy the file link, username and caption, open the photo or video in another app, and read its text with Google Lens. A story's menu gets Copy username.	在動態首頁貼文或 Reel 的選單中新增「詳細資料」，顯示發佈時間、發佈者、媒體 ID 與下載儲存的尺寸，並提供複製檔案連結、使用者名稱與說明文字、在其他應用程式中開啟相片或影片，以及用 Google Lens 讀取文字的按鈕。限時動態的選單會加入「複製使用者名稱」。
 Caption	說明文字
 Caption copied	已複製說明文字
 Copy caption	複製說明文字
@@ -1223,7 +1225,7 @@ Never. Pick a time and the tab bar slides away once a reel has played that long 
 # context: summary of the Hide the tab bar on Reels row; %1$d is the seconds picked, 2, 3, 5 or 8
 On Reels, the tab bar slides away after %1$d seconds without a touch. Tap the bottom edge of the screen, change tab or press Back to bring it back. Restart Instagram after changing it.	在 Reels 中，未觸碰畫面 %1$d 秒後分頁列會滑出畫面。點擊螢幕底部邊緣、切換分頁或按返回即可重新顯示。變更後請重新啟動 Instagram。
 Start feed videos with sound	動態首頁影片預設開啟聲音
-Videos on Home play with their sound on, the same as tapping a video's speaker. Mute one and the ones after it stay muted. Your phone's ringer and volume still count, so on silent or with the volume down, they stay quiet.	首頁影片會開啟聲音播放，等同點擊影片的喇叭按鈕。將其中一部靜音後，之後的影片也會保持靜音。仍受手機鈴聲與音量設定影響，因此靜音或音量調低時仍不會出聲。
+Videos on Home play with their sound on, the same as tapping a video's speaker, and so do songs on photo posts. Mute one and the ones after it stay muted. Your phone's ringer and volume still count, so on silent or with the volume down, they stay quiet.	首頁影片會開啟聲音播放，等同點擊影片的喇叭按鈕，相片貼文的歌曲也一樣。將其中一部靜音後，之後的影片也會保持靜音。仍受手機鈴聲與音量設定影響，因此靜音或音量調低時仍不會出聲。
 Start feed videos muted	動態首頁影片預設靜音
 Videos on Home start silent, even after you turn the sound on in Reels, so reels keep their sound. Tap a video's speaker to hear that one. Wins over Start feed videos with sound.	首頁影片會以靜音開始播放，即使你在 Reels 中開啟了聲音也一樣，因此 Reels 仍會保留聲音。點擊影片的喇叭按鈕即可聽該影片。優先於「動態首頁影片預設開啟聲音」。
 Tap a feed video to pause it	點擊動態首頁影片以暫停
@@ -2636,6 +2638,10 @@ The time on the seek bar counts down what's left of the video, like -0:33 / 0:45
 Time under the tags button	時間顯示在標註按鈕下方
 # context: Summary of Time under the tags button (#711)
 Puts the time in the corner under the tags button instead of the middle of the bar.	把時間放在標註按鈕下方的角落，而不是拖曳列中間.
+# context: Feed settings: a switch under Time on the seek bar that moves the time to the video's top corner, below Instagram's countdown (#788)
+Time in the top corner	時間顯示在上方角落
+# context: Summary of Time in the top corner (#788)
+Puts the time in the top corner of the video instead of over the bar, just below anything Instagram shows there, like its countdown.	把時間放在影片上方角落，而不是拖曳列上方，就在 Instagram 顯示的倒數計時等內容正下方。
 # context: Feed settings: a switch under Tap a feed video to pause it that keeps any tap on a feed video from opening Reels (#706)
 Taps on feed videos stay in the feed	點擊動態影片時留在動態
 # context: Summary of Taps on feed videos stay in the feed; Tap a feed video to pause it is the switch above it, use its translation (#706)
@@ -2677,7 +2683,7 @@ Keeps 2x only when you hold the video for about 3 seconds. Let go sooner and it 
 # context: Feed settings: a switch under Keep 2x after you let go that leaves Instagram's 2x label on a feed video kept at 2x (#860)
 Show 2x after you let go	放開後顯示 2 倍速
 # context: Summary of Show 2x after you let go, a switch under Keep 2x after you let go (#860)
-A feed video that keeps playing at 2x shows Instagram's 2x and time labels in place of the name until it goes back to normal speed.	持續以 2 倍速播放的動態影片會以 Instagram 的 2 倍速和時間標籤取代名稱，直到恢復正常速度.
+A feed video that keeps playing at 2x shows a 2x label at the top until it goes back to normal speed.	持續以 2 倍速播放的動態影片會在上方顯示 2x 標籤，直到恢復正常速度。
 # context: Feed settings: a switch under Hold for 2x on feed videos that keeps the poster's name over the video while it's held at 2x (#552)
 Keep the name while you hold	按住時保留名稱
 # context: Summary of Keep the name while you hold, a switch under Hold for 2x on feed videos (#552)
@@ -2956,3 +2962,11 @@ Long press a chat to group it	長按聊天即可分組
 # context: Stories switch Story rings on saved posts and its summary, for posts on the Saved page (#790)
 Story rings on saved posts	已儲存貼文的限時動態光圈
 Posts you saved show the story ring around the author's picture, like Home does, and a tap on it opens their story. It only uses stories Instagram has already loaded.	你儲存的貼文會像首頁一樣在作者大頭貼照周圍顯示限時動態光圈，點一下就能開啟限時動態。只會使用 Instagram 已載入的限時動態。
+# context: Details in a post's menu (#839): a row under the facts that sends the photo, or a video's cover, to Google Lens to read its words
+Read text with Lens	用 Lens 讀取文字
+# context: Details in a post's menu (#839): a toast while Open with or Read text with Lens fetches the post's file
+Getting the file ready	正在準備檔案
+# context: Details in a post's menu (#839): a toast when Open with or Read text with Lens couldn't fetch the post's file
+Couldn't get the file	無法取得檔案
+# context: Details in a post's menu (#839): a toast when no app on the phone takes the photo or video Open with offers
+No app here can open it	沒有可開啟的應用程式

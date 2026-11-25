@@ -517,6 +517,8 @@ Turn on %1$s to use this slider.	Aktifkan %1$s untuk menggunakan penggeser ini.
 Turn on Story ring size to use this choice.	Aktifkan Ukuran lingkaran cerita untuk menggunakan pilihan ini.
 # context: Settings page, Reels: the line under the greyed-out Fill the screen switch while Show the whole reel is on
 Turn off Show the whole reel to use this choice.	Nonaktifkan Tampilkan reel utuh untuk menggunakan pilihan ini.
+# context: Settings page, Feed: the line under the greyed-out Time in the top corner switch while Time under the tags button is on (#788)
+Turn off Time under the tags button to use this choice.	Nonaktifkan Waktu di bawah tombol tag untuk menggunakan pilihan ini.
 Turn on Default playback quality to use this choice.	Aktifkan Kualitas pemutaran default untuk menggunakan pilihan ini.
 Updating remembered positions...	Memperbarui posisi tersimpan...
 Undo cleared positions	Pulihkan posisi yang dihapus
@@ -893,7 +895,7 @@ Media link copied. It stops working after a few days.	Tautan media disalin. Taut
 No direct link for this one	Tidak ada tautan langsung untuk yang ini
 Posted %1$s	Diposting %1$s
 Size %1$d × %2$d	Ukuran %1$d × %2$d
-Adds Details to a feed post's or reel's menu. It shows when it went up, who posted it, its media ID and the size Download saves, with buttons to copy the file link, username and caption.	Menambahkan Detail ke menu postingan di feed atau reel. Menampilkan kapan diunggah, siapa yang mengunggah, ID medianya, dan ukuran yang disimpan Unduh, dengan tombol untuk menyalin tautan file, nama pengguna, dan keterangan.
+Adds Details to a feed post's or reel's menu. It shows when it went up, who posted it, its media ID and the size Download saves, with buttons to copy the file link, username and caption, open the photo or video in another app, and read its text with Google Lens. A story's menu gets Copy username.	Menambahkan Detail ke menu postingan di feed atau reel. Menampilkan kapan diunggah, siapa yang mengunggah, ID medianya, dan ukuran yang disimpan Unduh, dengan tombol untuk menyalin tautan file, nama pengguna, dan keterangan, membuka foto atau video di aplikasi lain, serta membaca teksnya dengan Google Lens. Menu cerita mendapat Salin nama pengguna.
 Caption	Keterangan
 Caption copied	Keterangan disalin
 Copy caption	Salin keterangan
@@ -1241,7 +1243,7 @@ Never. Pick a time and the tab bar slides away once a reel has played that long 
 # context: summary of the Hide the tab bar on Reels row; %1$d is the seconds picked, 2, 3, 5 or 8
 On Reels, the tab bar slides away after %1$d seconds without a touch. Tap the bottom edge of the screen, change tab or press Back to bring it back. Restart Instagram after changing it.	Di Reels, bilah tab bergeser keluar setelah %1$d detik tanpa sentuhan. Ketuk tepi bawah layar, pindah tab, atau tekan Kembali untuk memunculkannya lagi. Mulai ulang Instagram setelah mengubahnya.
 Start feed videos with sound	Mulai video feed dengan suara
-Videos on Home play with their sound on, the same as tapping a video's speaker. Mute one and the ones after it stay muted. Your phone's ringer and volume still count, so on silent or with the volume down, they stay quiet.	Video di Beranda diputar dengan suara menyala, sama seperti mengetuk speaker video. Jika kamu membisukan satu video, video berikutnya tetap tanpa suara. Mode dering dan volume ponsel tetap berlaku, jadi saat senyap atau volume dimatikan, video tetap tanpa suara.
+Videos on Home play with their sound on, the same as tapping a video's speaker, and so do songs on photo posts. Mute one and the ones after it stay muted. Your phone's ringer and volume still count, so on silent or with the volume down, they stay quiet.	Video di Beranda diputar dengan suara menyala, sama seperti mengetuk speaker video, begitu juga lagu di postingan foto. Jika kamu membisukan satu video, video berikutnya tetap tanpa suara. Mode dering dan volume ponsel tetap berlaku, jadi saat senyap atau volume dimatikan, video tetap tanpa suara.
 Start feed videos muted	Mulai video feed tanpa suara
 Videos on Home start silent, even after you turn the sound on in Reels, so reels keep their sound. Tap a video's speaker to hear that one. Wins over Start feed videos with sound.	Video di Beranda mulai tanpa suara, bahkan setelah kamu menyalakan suara di Reels, jadi reels tetap bersuara. Ketuk speaker video untuk mendengarkan video itu. Lebih diutamakan daripada Mulai video feed dengan suara.
 Tap a feed video to pause it	Ketuk video feed untuk menjedanya
@@ -2633,6 +2635,10 @@ The time on the seek bar counts down what's left of the video, like -0:33 / 0:45
 Time under the tags button	Waktu di bawah tombol tag
 # context: Summary of Time under the tags button (#711)
 Puts the time in the corner under the tags button instead of the middle of the bar.	Menaruh waktu di sudut, di bawah tombol tag, bukan di tengah bilah.
+# context: Feed settings: a switch under Time on the seek bar that moves the time to the video's top corner, below Instagram's countdown (#788)
+Time in the top corner	Waktu di sudut atas
+# context: Summary of Time in the top corner (#788)
+Puts the time in the top corner of the video instead of over the bar, just below anything Instagram shows there, like its countdown.	Menaruh waktu di sudut atas video, bukan di atas bilah, tepat di bawah apa pun yang ditampilkan Instagram di sana, seperti hitung mundurnya.
 # context: Feed settings: a switch under Tap a feed video to pause it that keeps any tap on a feed video from opening Reels (#706)
 Taps on feed videos stay in the feed	Ketukan di video feed tetap di feed
 # context: Summary of Taps on feed videos stay in the feed; Tap a feed video to pause it is the switch above it, use its translation (#706)
@@ -2674,7 +2680,7 @@ Keeps 2x only when you hold the video for about 3 seconds. Let go sooner and it 
 # context: Feed settings: a switch under Keep 2x after you let go that leaves Instagram's 2x label on a feed video kept at 2x (#860)
 Show 2x after you let go	Tampilkan 2x setelah dilepas
 # context: Summary of Show 2x after you let go, a switch under Keep 2x after you let go (#860)
-A feed video that keeps playing at 2x shows Instagram's 2x and time labels in place of the name until it goes back to normal speed.	Video feed yang tetap diputar 2x menampilkan label 2x dan waktu dari Instagram sebagai ganti nama sampai kecepatannya kembali normal.
+A feed video that keeps playing at 2x shows a 2x label at the top until it goes back to normal speed.	Video feed yang tetap diputar 2x menampilkan label 2x di bagian atas sampai kecepatannya kembali normal.
 # context: Feed settings: a switch under Hold for 2x on feed videos that keeps the poster's name over the video while it's held at 2x (#552)
 Keep the name while you hold	Tetap tampilkan nama saat menahan
 # context: Summary of Keep the name while you hold, a switch under Hold for 2x on feed videos (#552)
@@ -2953,3 +2959,11 @@ Long press a chat to group it	Tekan lama chat untuk mengelompokkannya
 # context: Stories switch Story rings on saved posts and its summary, for posts on the Saved page (#790)
 Story rings on saved posts	Lingkaran cerita di postingan tersimpan
 Posts you saved show the story ring around the author's picture, like Home does, and a tap on it opens their story. It only uses stories Instagram has already loaded.	Postingan yang kamu simpan menampilkan lingkaran cerita di sekitar foto pembuatnya, seperti di Beranda, dan mengetuknya membuka ceritanya. Hanya memakai cerita yang sudah dimuat Instagram.
+# context: Details in a post's menu (#839): a row under the facts that sends the photo, or a video's cover, to Google Lens to read its words
+Read text with Lens	Baca teks dengan Lens
+# context: Details in a post's menu (#839): a toast while Open with or Read text with Lens fetches the post's file
+Getting the file ready	Menyiapkan file
+# context: Details in a post's menu (#839): a toast when Open with or Read text with Lens couldn't fetch the post's file
+Couldn't get the file	File tidak dapat diambil
+# context: Details in a post's menu (#839): a toast when no app on the phone takes the photo or video Open with offers
+No app here can open it	Tak ada aplikasi untuk membukanya
